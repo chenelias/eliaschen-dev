@@ -7,9 +7,7 @@ import Body from '../components/Body.astro'
 import TypeTitle from '../components/Index/TypeTitle'
 import About from '../components/Index/Aubot.astro'
 import Content from '../components/Content.astro'
-const posts = (await Astro.glob('./posts/*.md')).sort(
-    (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
-)
+import PostsSection from '../components/Index/PostsSection.astro'
 ---
 
 <!DOCTYPE html>
@@ -30,34 +28,18 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
             <Content>
                 <About />
                 <div class="mt-[30px]">
-                    <div class="postsdiv">
+                    <section class="postsdiv">
                         <h1 class="font-extrabold text-4xl font-mplus">
                             Posts&thinsp;<span class="text-orange-500">-</span>
                         </h1>
-                    </div>
-                    <!-- <section class="mt-5">
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {
-                                posts.map((post) => (
-                                        <li>
-                                            <a href={`/posts/${post.frontmatter.filename}`}>
-                                                <div class="bg-gray-200 rounded-lg p-3 h-[150px]">
-                                                    <h1 class="text-xl font-mplus">{post.frontmatter.title}</h1>
-                                                    <p>{post.frontmatter.description}</p>
-                                                    <div class="bg-purple-300 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
-                                                        {post.frontmatter.tags}
-                                                    </div>                                            </div>
-                                            </a>
-                                        </li>
-                                    ))
-                            }
-                        </ul>
-                    </section> -->
-                    <div class="worksdiv mt-[10px]">
+                        <PostsSection client:visible />
+                    </section>
+                   
+                    <section class="worksdiv mt-[10px]">
                         <h1 class="font-extrabold text-4xl font-mplus">
                             Works&thinsp;<span class="text-orange-500 font-extrabold">-</span>
                         </h1>
-                    </div>
+                    </section>
                 </div>
             </Content>
         </main>
