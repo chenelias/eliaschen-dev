@@ -1,0 +1,29 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import TypeWorks from '../components/Typing/TypeWorks'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title="EliasChen - Works" description="Detail of My works on github" />
+    </head>
+    <Body>
+        <Header title={SITE_TITLE} />
+        <main class="pt-[120px]">
+            <Content>
+                <div>
+                    <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                        <TypeWorks client:visible />
+                    </h1>
+                </div>
+            </Content>
+        </main>
+        <Footer />
+    </Body>
+</html>

@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import TypePosts from '../components/Typing/TypePosts'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title="EliasChen - Posts" description="Share something around of Develop with posts" />
+    </head>
+    <Body>
+        <Header title="EliasChen - Posts" />
+        <main class="pt-[120px]">
+            <Content>
+                <div>
+                    <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500" ><TypePosts client:visible /></h1>
+                    <div>
+                        
+                    </div>
+                </div>
+            </Content>
+        </main>
+        <Footer />
+    </Body>
+</html>

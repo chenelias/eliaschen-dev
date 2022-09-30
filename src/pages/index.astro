@@ -1,50 +1,75 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import TypeTitle from '../components/Index/TypeTitle'
+import About from '../components/Index/Aubot.astro'
+import Content from '../components/Content.astro'
+const posts = (await Astro.glob('./posts/*.md')).sort(
+    (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
+)
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <Body>
+        <Header title={SITE_TITLE} />
+        <main class="pt-[70px]">
+            <div class="mt-20 mx-auto text-center mb-28">
+                <h1 class="text-md mb-1 font-thin">WELCOME TO ELIASCHEN.DEV</h1>
+                <h1 class="text-3xl font-mplus">I Share about</h1>
+                <h1 class="typetitle font-bold font-mplus text-orange-500 text-5xl">
+                    <TypeTitle client:visible />
+                </h1>
+            </div>
+            <Content>
+                <About />
+                <div class="mt-[30px]">
+                    <div class="postsdiv">
+                        <h1 class="font-extrabold text-4xl font-mplus">
+                            Posts&thinsp;<span class="text-orange-500">-</span>
+                        </h1>
+                    </div>
+                    <!-- <section class="mt-5">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {
+                                posts.map((post) => (
+                                        <li>
+                                            <a href={`/posts/${post.frontmatter.filename}`}>
+                                                <div class="bg-gray-200 rounded-lg p-3 h-[150px]">
+                                                    <h1 class="text-xl font-mplus">{post.frontmatter.title}</h1>
+                                                    <p>{post.frontmatter.description}</p>
+                                                    <div class="bg-purple-300 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                                        {post.frontmatter.tags}
+                                                    </div>                                            </div>
+                                            </a>
+                                        </li>
+                                    ))
+                            }
+                        </ul>
+                    </section> -->
+                    <div class="worksdiv mt-[10px]">
+                        <h1 class="font-extrabold text-4xl font-mplus">
+                            Works&thinsp;<span class="text-orange-500 font-extrabold">-</span>
+                        </h1>
+                    </div>
+                </div>
+            </Content>
+        </main>
+        <Footer />
+    </Body>
+    <style>
+        @media only screen and (max-width: 440px) {
+            .typetitle {
+                font-size: 35px;
+            }
+        }
+    </style>
+
+
 </html>

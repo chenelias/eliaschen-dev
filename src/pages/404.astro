@@ -1,0 +1,40 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import { AiOutlineArrow } from '../Printicon'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title="EliasChen - Posts" description="" />
+    </head>
+    <Body>
+        <Header title="EliasChen - Posts" />
+        <main class="pt-[100px] mb-[50px]">
+            <Content>
+                <h1 class="text-center text-6xl font-mplus">
+                    <p class="text-xl">ERROR</p><p class="font-bold">404</p><p class="text-3xl">Oops, not found</p>
+                    <a
+                        href="/"
+                        class="hover:text-orange-500 underline-orange-500 decoration-orange-500 text-xl flex items-center underline underline-offset-[8px] text-center mt-[30px] font-mplus"
+                        >Back to HomePage<span class="relative top-[2px]"><AiOutlineArrow client:visible /></span>
+                    </a>
+                </h1>
+            </Content>
+        </main>
+        <Footer />
+    </Body>
+
+    <style>
+        .errorhover:hover .hashtag-icon {
+            rotate: 17.5deg;
+        }
+    </style>
+
+
+</html>
