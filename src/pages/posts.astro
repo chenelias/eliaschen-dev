@@ -17,18 +17,18 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <BaseHead title="EliasChen - Posts" description="Share something around of Develop with posts" />
+        <BaseHead title="EliasChen - Posts" description="Share my around of Develop with posts" />
     </head>
     <Body>
         <Header title="EliasChen - Posts" />
-        <main class="pt-[120px]">
+        <main class="pt-[100px]">
             <ContentXL>
                 <div>
                     <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                         <TypePosts client:visible />
                     </h1>
                     <div>
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+                        <ul class="grid grid-cols-1 xs:grid-cols-2 gap-4 mt-10">
                             {
                                 posts.map((post) => (
                                     <li class="postlinkbox ">
@@ -61,6 +61,9 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
         <Footer />
     </Body>
     <style>
+        .postlist{
+            
+        }
         .postlinkbox:hover .postlinkbox-title {
             text-decoration: underline;
         }
