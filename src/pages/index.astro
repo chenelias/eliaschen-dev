@@ -8,6 +8,7 @@ import TypeTitle from '../components/Index/TypeTitle'
 import About from '../components/Index/Aubot.astro'
 import Content from '../components/Content.astro'
 import PostsSection from '../components/Index/PostsSection.astro'
+import ContentXL from '../components/ContentXL.astro'
 ---
 
 <!DOCTYPE html>
@@ -27,6 +28,8 @@ import PostsSection from '../components/Index/PostsSection.astro'
             </div>
             <Content>
                 <About />
+            </Content>
+            <ContentXL>
                 <div class="mt-[30px]">
                     <section class="postsdiv">
                         <h1 class="font-extrabold text-4xl font-mplus">
@@ -34,14 +37,14 @@ import PostsSection from '../components/Index/PostsSection.astro'
                         </h1>
                         <PostsSection />
                     </section>
-                   
+
                     <section class="worksdiv mt-[10px]">
                         <h1 class="font-extrabold text-4xl font-mplus">
                             Works&thinsp;<span class="text-orange-500 font-extrabold">-</span>
                         </h1>
                     </section>
                 </div>
-            </Content>
+            </ContentXL>
         </main>
         <Footer />
     </Body>
