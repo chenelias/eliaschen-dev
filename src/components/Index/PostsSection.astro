@@ -11,11 +11,6 @@ const posts = (await Astro.glob('../../pages/posts/*.md')).sort(
             posts.map((post) => (
                 <li class="postlinkbox">
                     <a href={`/posts/${post.frontmatter.filename}`}>
-                        <Image
-                            class="postlinkbox-image rounded-xl border-[1.5px] duration-200"
-                            src={import('../../../public/placeholder-hero.jpg')}
-                            alt="PostImage - EliasChen.dev"
-                        />
                         <div class="rounded-b-lg p-4 ">
                             <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">{post.frontmatter.title}</h1>
                             <p>{post.frontmatter.description}</p>
