@@ -9,7 +9,7 @@ module.exports = {
             },
             screens: {
                 // 490
-                xs: '530px',
+                xs: '510px',
                 pxfourseven: '470',
             },
         },

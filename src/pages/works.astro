@@ -4,7 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
-import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
 import { Image } from '@astrojs/image/components'
 import TypeWorks from '../components/Typing/TypeWorks'
 const posts = await Astro.glob('./works/*.mdx')
@@ -18,25 +18,25 @@ const posts = await Astro.glob('./works/*.mdx')
     <Body>
         <Header title={SITE_TITLE} />
         <main class="pt-[100px]">
-            <Content>
+            <ContentXL>
                 <div>
                     <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                         <TypeWorks client:visible />
                     </h1>
                 </div>
-                <ul class="grid grid-cols-1 xs:grid-cols-2 gap-4 mt-10">
+                <ul class="grid grid-cols-1 xs:grid-cols-2 gap-3 mt-10">
                     {
                         posts
                             .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                             .map((post) => (
-                                <li class="postlinkbox ">
+                                <li class="postlinkbox m-1">
                                     <a href={post.frontmatter.url}>
                                         <Image
                                             class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                             src={post.frontmatter.lightImage}
                                             alt="PostImage - EliasChen.dev"
                                             width={720 * 2}
-                                            aspectRatio={2.0}
+                                            aspectRatio={1.7}
                                         />
                                         <div class=" rounded-b-lg p-4 ">
                                             <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
@@ -65,7 +65,7 @@ const posts = await Astro.glob('./works/*.mdx')
                             ))
                     }
                 </ul>
-            </Content>
+            </ContentXL>
         </main>
         <Footer />
     </Body>

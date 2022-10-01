@@ -1,0 +1,48 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import { AiOutlineArrow } from '../Printicon'
+import { FaSlackHash } from 'react-icons/fa/index.js'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title="EliasChen - Posts" description="" />
+    </head>
+    <Body>
+        <Header title="EliasChen - Posts" />
+        <main class="pt-[100px] mb-[50px]">
+            <div>
+                <div class="">
+                    <h2
+                        class="z-0 logoicontext absolute font-semibold flex items-center tracking-tighter p-2 my-2 ml-2 font-mplus text-5xl"
+                    >
+                        <span class="hashtag-icon text-5xl duration-200"><FaSlackHash /></span>
+                        EliasChen.dev
+                    </h2>
+                </div>
+                <img src="../../public/works/eliaschen-dev/index-dark.png" alt="hello" class="img z-0" />
+            </div>
+        </main>
+        <Footer />
+    </Body>
+
+    <style>
+       
+        .errorhover:hover .hashtag-icon {
+            rotate: 17.5deg;
+        }
+        .img {
+            filter: blur(5px);
+            position:absolute
+        
+        }
+    </style>
+
+
+</html>

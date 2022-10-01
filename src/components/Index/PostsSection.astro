@@ -7,7 +7,7 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
 ---
 
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 m-4">
+    <ul class="grid grid-cols-1 xs:grid-cols-2 gap-4 m-4">
         {
             posts
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
@@ -19,7 +19,7 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
                                 class="postlinkbox-image duration-200 rounded-xl border-[1px] mb-[-5px]"
                                 alt="PostImage - EliasChen.dev"
                                 width={720 * 2}
-                                aspectRatio={2.0}
+                                aspectRatio={1.7}
                                 src={import('../../../public/placeholder-hero.jpg')}
                             />
                             <div class=" rounded-b-lg p-4 ">
