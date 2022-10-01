@@ -9,6 +9,7 @@ import About from '../components/Index/Aubot.astro'
 import Content from '../components/Content.astro'
 import PostsSection from '../components/Index/PostsSection.astro'
 import ContentXL from '../components/ContentXL.astro'
+import { AiOutlineArrow } from '../Printicon'
 ---
 
 <!DOCTYPE html>
@@ -32,6 +33,12 @@ import ContentXL from '../components/ContentXL.astro'
             <ContentXL>
                 <div class="mt-[30px]">
                     <section class="postsdiv">
+                        <a href="/posts">
+                            <button
+                                class="float-right flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                ><span class=""><AiOutlineArrow /></span>
+                            </button>
+                        </a>
                         <h1 class="font-extrabold text-4xl font-mplus">
                             Posts&thinsp;<span class="text-orange-500">-</span>
                         </h1>
@@ -39,6 +46,12 @@ import ContentXL from '../components/ContentXL.astro'
                     </section>
 
                     <section class="worksdiv mt-[10px]">
+                        <a href="/works">
+                            <button
+                                class="float-right flex items-center text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                ><span><AiOutlineArrow /></span>
+                            </button>
+                        </a>
                         <h1 class="font-extrabold text-4xl font-mplus">
                             Works&thinsp;<span class="text-orange-500 font-extrabold">-</span>
                         </h1>
