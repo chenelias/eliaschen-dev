@@ -5,7 +5,7 @@ author: eliaschen
 url: /posts/hello
 date: '2022-10-01'
 layout: "../../layouts/BlogPost.astro"
-heroImage: /posts/placeholder-hero.jpg
+heroImage: /placeholder-hero.jpg
 tags:
     - Web
 ---
