@@ -31,24 +31,32 @@ const posts = (await Astro.glob('./works/*.mdx')).sort(
                         posts.map((post) => (
                             <li class="postlinkbox ">
                                 <a href={post.frontmatter.url}>
-                                     <img
-                                 class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl"
-                                src={post.frontmatter.heroImage}
-                               alt="PostImage - EliasChen.dev"
-                            />
+                                    <img
+                                        class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                        src={post.frontmatter.heroImage}
+                                        alt="PostImage - EliasChen.dev"
+                                    />
                                     <div class=" rounded-b-lg p-4 ">
                                         <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                             {post.frontmatter.title}
                                         </h1>
-                                        
-                                        <div class='flex mt-1'>
+                                        <div class="flex">
+                                            <p>
+                                                {post.frontmatter.startAt}
+                                                {post.frontmatter.endAt && <p>-</p>}
+                                                {post.frontmatter.endAt}
+                                            </p>
+                                            <p class="mx-1">&bull;</p>
+                                            <p>{post.frontmatter.state}</p>
+                                        </div>
+                                        <div class="flex mt-1">
                                             <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-2">
                                                 {post.frontmatter.platform}
                                             </div>
-                                             <div class="bg-green-300 dark:bg-green-800 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                            <div class="bg-green-300 dark:bg-green-800 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
                                                 {post.frontmatter.stack}
                                             </div>
-                                            </div>
+                                        </div>
                                         <p class="text-right">{post.frontmatter.date}</p>
                                     </div>
                                 </a>
@@ -60,7 +68,7 @@ const posts = (await Astro.glob('./works/*.mdx')).sort(
         </main>
         <Footer />
     </Body>
-        <style>
+    <style>
         .postlist {
         }
         .postlinkbox:hover .postlinkbox-title {
@@ -74,5 +82,6 @@ const posts = (await Astro.glob('./works/*.mdx')).sort(
             transform: scale(1.04);
         }
     </style>
+
 
 </html>

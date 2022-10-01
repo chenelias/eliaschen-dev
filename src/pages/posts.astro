@@ -34,7 +34,7 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                                     <li class="postlinkbox ">
                                         <a href={post.frontmatter.url}>
                                             <Image
-                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl"
+                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                                 alt="PostImage - EliasChen.dev"
                                                 src="/placeholder-hero.jpg"
                                                 width={720 * 2}

@@ -9,7 +9,8 @@ import { FiExternalLink } from 'react-icons/fi/index.js'
 
 export interface Props {
     content: {
-        state?:string
+        fortime:string
+        state?: string
         title: string
         description: string
         createdAt?: string
@@ -27,12 +28,13 @@ export interface Props {
         finalRelease?: string
         startAt?: string
         endAt?: string
-        url?:string
+        url?: string
     }
 }
 
 const {
     content: {
+        fortime,
         url,
         state,
         title,
@@ -76,11 +78,13 @@ const {
                 <div class="flex items-center">
                     {
                         icon && (
-                            <img
-                                class={`border border-slate-300 dark:border-zinc-700  rounded-full w-[50px] h-[50px] mr-[5px] bg-${iconbg}`}
-                                src={icon}
-                                alt="WorkIcon"
-                            />
+                            <div class={`bg-${iconbg} z-9 relative rounded-full w-[50px] h-[50px] mr-[5px]`}>
+                                <img
+                                    class={`border border-slate-300 dark:border-zinc-700 z-10  rounded-full w-[50px] h-[50px] mr-[5px]`}
+                                    src={icon}
+                                    alt="WorkIcon"
+                                />
+                            </div>
                         )
                     }<h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
                 </div>
@@ -94,33 +98,33 @@ const {
                         <div class="flex text-sm m-2">
                             <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Stack:</p>
                             <p class="">{stack}</p>
-                            </div>
-                            )
-                        }
+                        </div>
+                    )
+                }
                 {
                     platform && (
                         <div class="flex text-sm m-2">
                             <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Platform:</p>
                             <p class="">{platform}</p>
-                            </div>
-                            )
-                        }
+                        </div>
+                    )
+                }
                 {
                     license && (
                         <div class="flex text-sm m-2">
                             <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">License:</p>
                             <p class="">{license}</p>
-                            </div>
-                            )
-                        }
-                    {
-                          state && (
-                            <div class="flex text-sm m-2">
-                              <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">State:</p>
-                              <p class="">{state}</p>
-                          </div>
-                          )
-                      }
+                        </div>
+                    )
+                }
+                {
+                    state && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">State:</p>
+                            <p class="">{state}</p>
+                        </div>
+                    )
+                }
                 {
                     website && (
                         <div class="flex text-sm m-2">

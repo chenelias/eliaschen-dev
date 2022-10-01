@@ -8,7 +8,8 @@ module.exports = {
                 mplus: ["'M PLUS Rounded 1c'", 'Verdana', 'sans-serif'],
             },
             screens: {
-                xs: '490px',
+                // 490
+                xs: '530px',
                 pxfourseven: '470',
             },
         },
