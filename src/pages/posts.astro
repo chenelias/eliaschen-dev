@@ -28,7 +28,7 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                         <TypePosts client:visible />
                     </h1>
                     <div>
-                        <ul class="grid grid-cols-1 xs:grid-cols-2 gap-4 mt-10">
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                             {
                                 posts
                                     .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
