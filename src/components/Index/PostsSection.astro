@@ -1,7 +1,7 @@
 ---
 import React from 'react'
 import { Image, Picture } from '@astrojs/image/components'
-const posts = (await Astro.glob('../../pages/posts/*.md')).sort(
+const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
 ---
