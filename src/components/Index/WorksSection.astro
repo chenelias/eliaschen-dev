@@ -34,15 +34,14 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
                                     <p class="mx-1">&bull;</p>
                                     <p>{post.frontmatter.state}</p>
                                 </div>
-                                <div class="flex mt-1">
-                                    <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-2">
+                                <div class="mt-1">
+                                    <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-1">
                                         {post.frontmatter.platform}
                                     </div>
                                     <div class="bg-green-300 dark:bg-green-800 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
                                         {post.frontmatter.stack}
                                     </div>
                                 </div>
-                                <p class="text-right">{post.frontmatter.date}</p>
                             </div>
                         </a>
                     </li>
