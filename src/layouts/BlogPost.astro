@@ -14,11 +14,12 @@ export interface Props {
         updatedAt?: string
         heroImage?: string
         tags: string[]
+        fortime?: string
     }
 }
 
 const {
-    content: { title, description, heroImage, tags },
+    content: { title, description, heroImage, tags,fortime },
 } = Astro.props
 ---
 

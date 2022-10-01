@@ -3,8 +3,10 @@ title: BurnMd
 url: '/works/burnmd'
 description: BurnMd is a the very simple markdown Online Editor.
 layout: '../../layouts/WorkPost.astro'
-heroImage: '/works/burnmd/burnmd-index-dark.png'
-source: 'https://github.com/chenelias/burnmd'
+heroImage: '/works/burnmd/burnmd-index-light.png'
+darkImage: '/works/burnmd/burnmd-index-dark.png'
+lightImage: '/works/burnmd/burnmd-index-light.png'
+source: 'https://github.com/chenelias/burnmd/'
 stack: 'React'
 platform: 'Web'
 sourcePlatform: 'GitHub(@ChenElias)'
@@ -13,22 +15,45 @@ icon: '/works/burnmd/icon.ico'
 license: 'MIT'
 iconbg: 'black'
 state: 'Still Update'
-startAt: '2022.7'
-fortime: 20227
+startAt: '2022.07'
+fortime: 202207
 ---
 
 ## Function
--  Control with toolbar
- ![image](/works/burnmd/burnmd-toolbar.png)
--   Edit markdown code on left side window and view output on right side area.
--   Toggle color mode with Dark/Light.
-<div class="block">
-    <img src="/works/burnmd/burnmd-index-dark.png" class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-2 mt-2" alt="Image" width="300"/><img src="/works/burnmd/burnmd-index-light.png" class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-2" alt="Image" width="300"/>
-</div>
--   Download editor file with markdown
-    <img src="/works/burnmd/burnmd-savefile.png" class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-6" alt="Image" width="300"/>
--   Upload file from local strong.
-<img src="/works/burnmd/burnmd-upload.png" class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-6" alt="Image" width="250"/>
+
+-   &bull;&thinsp;Control with toolbar
+    ![image](/works/burnmd/burnmd-toolbar.png)
+-   &bull;&thinsp;Edit markdown code on left side window and view output on right side area.
+-   &bull;&thinsp;Toggle color mode with Dark/Light.
+    <div class="block">
+        <img
+            src="/works/burnmd/burnmd-index-dark.png"
+            class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-2 mt-2"
+            alt="Image"
+            width="300"
+        />
+        <img
+            src="/works/burnmd/burnmd-index-light.png"
+            class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-2"
+            alt="Image"
+            width="300"
+        />
+    </div>
+-   &bull;&thinsp;Download editor file with markdown
+    <img
+        src="/works/burnmd/burnmd-savefile.png"
+        class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-6"
+        alt="Image"
+        width="300"
+    />
+-   &bull;&thinsp;Upload file from local strong.
+    <img
+        src="/works/burnmd/burnmd-upload.png"
+        class="border border-slate-300 dark:border-zinc-700 rounded-xl mb-6"
+        alt="Image"
+        width="250"
+    />
 
 ## How it work?
+
 I use [remarkjs/react-markdown](https://github.com/remarkjs/react-markdown) to render the Markdown code of user input.

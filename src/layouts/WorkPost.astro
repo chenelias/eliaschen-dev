@@ -6,10 +6,11 @@ import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
 import { FiExternalLink } from 'react-icons/fi/index.js'
+// import { theme } from '../components/Header/ThemeToggleButton'
 
 export interface Props {
     content: {
-        fortime:string
+        fortime: string
         state?: string
         title: string
         description: string
@@ -78,18 +79,16 @@ const {
                 <div class="flex items-center">
                     {
                         icon && (
-                            <div class={`bg-${iconbg} z-9 relative rounded-full w-[50px] h-[50px] mr-[5px]`}>
-                                <img
-                                    class={`border border-slate-300 dark:border-zinc-700 z-10  rounded-full w-[50px] h-[50px] mr-[5px]`}
-                                    src={icon}
-                                    alt="WorkIcon"
-                                />
-                            </div>
+                            <img
+                                class={`border border-slate-300 dark:border-zinc-700 z-10  rounded-full w-[50px] h-[50px] mr-[5px] bg-${iconbg}`}
+                                src={icon}
+                                alt="WorkIcon"
+                            />
                         )
                     }<h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
                 </div>
-                <div class="ml-1 flex text-lg font-bold font-mplus">
-                    {startAt && <p>{startAt}</p>}{endAt && <p>~</p>}
+                <div class="ml-1 flex mt-2 text-lg font-bold font-mplus">
+                    {startAt && <p>{startAt}</p>}{endAt && <p>&thinsp;-&thinsp;</p>}
                     {endAt && <p>{endAt}</p>}
                 </div>
                 {description && <p class="mb-4">&ensp;{description}</p>}
