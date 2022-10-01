@@ -1,22 +1,28 @@
 ---
+import { Image, Picture } from '@astrojs/image/components'
 const posts = (await Astro.glob('../../pages/posts/*.md')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
 ---
 
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-2 ml-5">
         {
             posts.map((post) => (
-                <li>
-                    <a href={`/posts/${post.frontmatter.filename}`}>
-                        <div class="bg-gray-200 rounded-lg p-4">
-                            <h1 class="text-xl font-mplus">{post.frontmatter.title}</h1>
+                <li class="postlink duration-200">
+                    <a href={post.frontmatter.url}>
+                        <div class="p-2">
+                            <Image
+                                src={import('../../../public/placeholder-hero.jpg')}
+                                class="postimg rounded-lg mb-2 duration-200 border-[1px]"
+                                alt="eliaschen"
+                            />
+                            <h1 class="posttitle text-2xl font-bold font-mplus">{post.frontmatter.title}</h1>
                             <p>{post.frontmatter.description}</p>
                             <div class="bg-purple-300 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
                                 {post.frontmatter.tags}
                             </div>
-                            <span>{post.frontmatter.date}</span>
+                            <p class="text-right">{post.frontmatter.date}</p>
                         </div>
                     </a>
                 </li>
@@ -24,3 +30,16 @@ const posts = (await Astro.glob('../../pages/posts/*.md')).sort(
         }
     </ul>
 </div>
+<style>
+
+    .postlink:hover .postimg {
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        transform: scale(1.04);
+    }
+    .postlink:hover .posttitle {
+        text-decoration: underline;
+    }
+</style>
