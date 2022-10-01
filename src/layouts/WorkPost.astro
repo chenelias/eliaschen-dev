@@ -1,23 +1,54 @@
 ---
+import React from 'react'
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
+import { FiExternalLink } from 'react-icons/fi/index.js'
 
 export interface Props {
     content: {
+        state?:string
         title: string
         description: string
         createdAt?: string
         updatedAt?: string
         heroImage?: string
+        source?: string
+        stack?: string
+        platform?: string
+        website?: string
+        sourcePlatform?: string
         tags: string[]
+        icon?: string
+        iconbg?: string
+        license?: string
+        finalRelease?: string
+        startAt?: string
+        endAt?: string
+        url?:string
     }
 }
 
 const {
-    content: { title, description, heroImage },
+    content: {
+        url,
+        state,
+        title,
+        description,
+        heroImage,
+        source,
+        stack,
+        platform,
+        sourcePlatform,
+        website,
+        icon,
+        iconbg,
+        license,
+        startAt,
+        endAt,
+    },
 } = Astro.props
 ---
 
@@ -31,20 +62,96 @@ const {
         <Header />
         <main class="pt-[56px]">
             <Content className="pt-6">
-                <div class="mb-8">
+                <div class="mb-3">
                     {
                         heroImage && (
                             <img
                                 class="border border-slate-300 dark:border-zinc-700 rounded-xl"
                                 src={heroImage}
-                                alt="PostImage"
+                                alt="WorksImage"
                             />
                         )
                     }
                 </div>
-                <div class="h-[4px] w-[40px] rounded-xl bg-orange-500" />
-                <h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
-                <div>{description}</div>
+                <div class="flex items-center">
+                    {
+                        icon && (
+                            <img
+                                class={`border border-slate-300 dark:border-zinc-700  rounded-full w-[50px] h-[50px] mr-[5px] bg-${iconbg}`}
+                                src={icon}
+                                alt="WorkIcon"
+                            />
+                        )
+                    }<h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
+                </div>
+                <div class="ml-1 flex text-lg font-bold font-mplus">
+                    {startAt && <p>{startAt}</p>}{endAt && <p>~</p>}
+                    {endAt && <p>{endAt}</p>}
+                </div>
+                {description && <p class="mb-4">&ensp;{description}</p>}
+                {
+                    stack && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Stack:</p>
+                            <p class="">{stack}</p>
+                            </div>
+                            )
+                        }
+                {
+                    platform && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Platform:</p>
+                            <p class="">{platform}</p>
+                            </div>
+                            )
+                        }
+                {
+                    license && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">License:</p>
+                            <p class="">{license}</p>
+                            </div>
+                            )
+                        }
+                    {
+                          state && (
+                            <div class="flex text-sm m-2">
+                              <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">State:</p>
+                              <p class="">{state}</p>
+                          </div>
+                          )
+                      }
+                {
+                    website && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Website:</p>
+                            <a
+                                href={website}
+                                target="_blank"
+                                class="text-blue-600 flex items-center font-bold hover:underline underline-offset-2 decoration-[1.5px] decoration-orange-500"
+                            >
+                                {title}
+                                <FiExternalLink />
+                            </a>
+                        </div>
+                    )
+                }
+                {
+                    sourcePlatform && (
+                        <div class="flex text-sm m-2">
+                            <p class="font-bold bg-orange-300 dark:bg-blue-600 px-1 rounded-md mr-[5px]">Source:</p>
+                            <a
+                                href={source}
+                                target="_blank"
+                                class="text-blue-600 flex items-center font-bold hover:underline underline-offset-2 decoration-[1.5px] decoration-orange-500"
+                            >
+                                {sourcePlatform}
+                                <FiExternalLink />
+                            </a>
+                        </div>
+                    )
+                }
+
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>

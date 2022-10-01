@@ -18,7 +18,7 @@ export interface Props {
 }
 
 const {
-    content: { title, description, heroImage },
+    content: { title, description, heroImage, tags },
 } = Astro.props
 ---
 
@@ -32,7 +32,7 @@ const {
         <Header />
         <main class="pt-[56px]">
             <Content className="pt-6">
-                <div class="mb-8">
+                <div class="mb-4">
                     {
                         heroImage && (
                             <img
@@ -43,8 +43,11 @@ const {
                         )
                     }
                 </div>
-                <div class="h-[4px] w-[40px] rounded-xl bg-orange-500" />
+                <!-- <div class="h-[4px] w-[40px] rounded-xl bg-orange-500"></div> -->
                 <h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
+                <p class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                    {tags}
+                </p>
                 <div>{description}</div>
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />

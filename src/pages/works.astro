@@ -5,7 +5,11 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
+import { Image } from '@astrojs/image/components'
 import TypeWorks from '../components/Typing/TypeWorks'
+const posts = (await Astro.glob('./works/*.mdx')).sort(
+    (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
+)
 ---
 
 <!DOCTYPE html>
@@ -22,8 +26,53 @@ import TypeWorks from '../components/Typing/TypeWorks'
                         <TypeWorks client:visible />
                     </h1>
                 </div>
+                <ul class="grid grid-cols-1 xs:grid-cols-2 gap-4 mt-10">
+                    {
+                        posts.map((post) => (
+                            <li class="postlinkbox ">
+                                <a href={post.frontmatter.url}>
+                                     <img
+                                 class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl"
+                                src={post.frontmatter.heroImage}
+                               alt="PostImage - EliasChen.dev"
+                            />
+                                    <div class=" rounded-b-lg p-4 ">
+                                        <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
+                                            {post.frontmatter.title}
+                                        </h1>
+                                        
+                                        <div class='flex mt-1'>
+                                            <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-2">
+                                                {post.frontmatter.platform}
+                                            </div>
+                                             <div class="bg-green-300 dark:bg-green-800 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                                {post.frontmatter.stack}
+                                            </div>
+                                            </div>
+                                        <p class="text-right">{post.frontmatter.date}</p>
+                                    </div>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
             </Content>
         </main>
         <Footer />
     </Body>
+        <style>
+        .postlist {
+        }
+        .postlinkbox:hover .postlinkbox-title {
+            text-decoration: underline;
+        }
+        .postlinkbox:hover .postlinkbox-image {
+            -webkit-transform: scale(1.04);
+            -moz-transform: scale(1.04);
+            -o-transform: scale(1.04);
+            -ms-transform: scale(1.04);
+            transform: scale(1.04);
+        }
+    </style>
+
 </html>

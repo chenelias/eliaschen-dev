@@ -5,13 +5,13 @@ const TypeTitle = () => {
         <div className="inline-flex">
             <h1>#</h1>
             <Typewriter
-                words={['Develop Tips', 'Web Design', 'UI/UX', 'Info Security', 'Something New']}
+                words={['Develop Tips', 'Coding', 'Web Design', 'Hacking', 'Something New', 'My Works']}
                 loop={0}
                 cursor
                 cursorStyle="_"
                 typeSpeed={100}
                 deleteSpeed={80}
-                delaySpeed={1500}
+                delaySpeed={1000}
             />
         </div>
     )
