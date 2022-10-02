@@ -16,7 +16,7 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
                     <li class="postlinkbox">
                         <a href={post.frontmatter.url}>
                             <Image
-                                class="postlinkbox-image duration-200 rounded-xl border-[1px] mb-[-5px]"
+                                class="dark:block hidden postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                 alt={`${post.frontmatter.title} - EliasChen.dev`}
                                 width={720 * 2}
                                 aspectRatio={1.7}
