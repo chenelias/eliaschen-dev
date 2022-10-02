@@ -8,6 +8,7 @@ import Content from '../components/Content.astro'
 
 export interface Props {
     content: {
+        date?:string
         title: string
         description: string
         createdAt?: string
@@ -19,7 +20,7 @@ export interface Props {
 }
 
 const {
-    content: { title, description, heroImage, tags, fortime },
+    content: { title, description, heroImage,date, tags, fortime },
 } = Astro.props
 ---
 
@@ -46,6 +47,7 @@ const {
                 </div>
                 <!-- <div class="h-[4px] w-[40px] rounded-xl bg-orange-500"></div> -->
                 <h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
+                <p class="text-md font-bold">{date}</p>
                 <p class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
                     {tags}
                 </p>
