@@ -17,12 +17,12 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
                         <a href={post.frontmatter.url}>
                             <Image
                                 class="postlinkbox-image duration-200 rounded-xl border-[1px] mb-[-5px]"
-                                alt={`&{post.frontmatter.title} - EliasChen.dev`}
+                                alt={`${post.frontmatter.title} - EliasChen.dev`}
                                 width={720 * 2}
                                 aspectRatio={1.7}
                                 src={
                                     post.frontmatter.heroImage === undefined
-                                        ? '/public/placeholder-postdefault.jpg'
+                                        ? '../../../public/placeholder-postdefault.jpg'
                                         : post.frontmatter.heroImage
                                 }
                             />

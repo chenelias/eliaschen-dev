@@ -35,14 +35,14 @@ const posts = await Astro.glob('./works/*.mdx')
                                         <Image
                                             class="dark:hidden block postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                             src={post.frontmatter.lightImage}
-                                            alt="PostImage - EliasChen.dev"
+                                            alt={`${post.frontmatter.title} - EliasChen.dev`}
                                             width={720 * 2}
                                             aspectRatio={1.7}
                                         />
                                         <Image
                                             class="dark:block hidden postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                             src={post.frontmatter.darkImage}
-                                            alt="PostImage - EliasChen.dev"
+                                            alt={`${post.frontmatter.title} - EliasChen.dev`}
                                             width={720 * 2}
                                             aspectRatio={1.7}
                                         />}
@@ -50,7 +50,7 @@ const posts = await Astro.glob('./works/*.mdx')
                                     post.frontmatter.heroImage === undefined
                                         ? '/public/placeholder-workdefault.jpg'
                                         : post.frontmatter.heroImage
-                                }  alt={`&{post.frontmatter.title} - EliasChen.dev`} />}
+                                }  alt={`${post.frontmatter.title} - EliasChen.dev`} />}
                                         <div class=" rounded-b-lg p-4 ">
                                             <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                                 {post.frontmatter.title}
