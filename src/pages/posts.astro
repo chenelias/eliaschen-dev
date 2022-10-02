@@ -8,7 +8,9 @@ import Content from '../components/Content.astro'
 import ContentXL from '../components/ContentXL.astro'
 import TypePosts from '../components/Typing/TypePosts'
 import React from 'react'
+import BadgeTag from '../components/BadgeTag.astro'
 import { Image } from '@astrojs/image/components'
+import { BiSearchAlt2 } from 'react-icons/bi/index.js'
 const posts = (await Astro.glob('./posts/*.mdx')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
@@ -27,13 +29,20 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                     <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                         <TypePosts client:visible />
                     </h1>
+                    <div class="text-center mt-5">
+                        <input
+                            type="text"
+                            placeholder="Search Posts"
+                            class="input-search inline-flex justify-center rounded-md border-2 border-zinc-400 p-3 text-xl font-medium shadow-sm hover: dark:hover:bg-zinc-700 hover:bg-orange-100 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 dark:focus:ring-offset-zinc-900 focus:ring-offset-orange-50 transition-all"
+                        />
+                    </div>
                     <div>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                             {
                                 posts
                                     .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                                     .map((post) => (
-                                        <li class="postlinkbox ">
+                                        <li class="postlinkbox m-1">
                                             <a href={post.frontmatter.url}>
                                                 <Image
                                                     class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
@@ -50,9 +59,33 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                                                     <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                                         {post.frontmatter.title}
                                                     </h1>
-                                                    <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
-                                                        #{post.frontmatter.tags}
-                                                    </div>
+                                                    {post.frontmatter.tag1 && (
+                                                        <BadgeTag>{post.frontmatter.tag1}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag2 && (
+                                                        <BadgeTag>{post.frontmatter.tag2}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag3 && (
+                                                        <BadgeTag>{post.frontmatter.tag3}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag4 && (
+                                                        <BadgeTag>{post.frontmatter.tag4}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag5 && (
+                                                        <BadgeTag>{post.frontmatter.tag5}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag6 && (
+                                                        <BadgeTag>{post.frontmatter.tag6}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag7 && (
+                                                        <BadgeTag>{post.frontmatter.tag7}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag8 && (
+                                                        <BadgeTag>{post.frontmatter.tag8}</BadgeTag>
+                                                    )}
+                                                    {post.frontmatter.tag9 && (
+                                                        <BadgeTag>{post.frontmatter.tag9}</BadgeTag>
+                                                    )}
                                                     <p class="text-right">{post.frontmatter.date}</p>
                                                 </div>
                                             </a>
@@ -67,17 +100,23 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
         <Footer />
     </Body>
     <style>
-        .postlist {
-        }
         .postlinkbox:hover .postlinkbox-title {
             text-decoration: underline;
         }
         .postlinkbox:hover .postlinkbox-image {
-            -webkit-transform: scale(1.04);
-            -moz-transform: scale(1.04);
-            -o-transform: scale(1.04);
-            -ms-transform: scale(1.04);
-            transform: scale(1.04);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -o-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+        .input-search {
+            width: 260px;
+        }
+        @media only screen and (min-width: 650px) {
+            .input-search {
+                width: 600px;
+            }
         }
     </style>
 

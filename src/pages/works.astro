@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import ContentXL from '../components/ContentXL.astro'
 import { Image } from '@astrojs/image/components'
+import BadgeWork from '../components/BadgeWork.astro'
 import TypeWorks from '../components/Typing/TypeWorks'
 const posts = await Astro.glob('./works/*.mdx')
 ---
@@ -68,9 +69,9 @@ const posts = await Astro.glob('./works/*.mdx')
                                                 <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-1">
                                                     {post.frontmatter.platform}
                                                 </div>
-                                                <div class="bg-green-300 dark:bg-blue-900 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                                <BadgeWork>
                                                     {post.frontmatter.stack}
-                                                </div>
+                                                </BadgeWork>
                                             </div>
                                         </div>
                                     </a>
@@ -88,13 +89,13 @@ const posts = await Astro.glob('./works/*.mdx')
         .postlinkbox:hover .postlinkbox-title {
             text-decoration: underline;
         }
-        .postlinkbox:hover .postlinkbox-image {
-            -webkit-transform: scale(1.04);
-            -moz-transform: scale(1.04);
-            -o-transform: scale(1.04);
-            -ms-transform: scale(1.04);
-            transform: scale(1.04);
-        }
+           .postlinkbox:hover .postlinkbox-image {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
     </style>
 
 

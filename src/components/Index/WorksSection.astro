@@ -1,19 +1,20 @@
 ---
 import React from 'react'
 import { Image, Picture } from '@astrojs/image/components'
+import BadgeWork from '../BadgeWork.astro';
 const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
 ---
 
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 m-1">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         {
             posts
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                 .filter((item, index) => index < 2)
                 .map((post) => (
-                    <li class="postlinkbox ">
+                    <li class="postlinkbox m-1">
                         <a href={post.frontmatter.url}>
                       {post.frontmatter.lightImage &&    
                                         <Image
@@ -52,9 +53,9 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
                                     <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-1">
                                         {post.frontmatter.platform}
                                     </div>
-                                    <div class="bg-green-300 dark:bg-blue-900 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                    <BadgeWork>
                                         {post.frontmatter.stack}
-                                    </div>
+                                    </BadgeWork>
                                 </div>
                             </div>
                         </a>
@@ -67,11 +68,11 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
     .postlinkbox:hover .postlinkbox-title {
         text-decoration: underline;
     }
-    .postlinkbox:hover .postlinkbox-image {
-        -webkit-transform: scale(1.04);
-        -moz-transform: scale(1.04);
-        -o-transform: scale(1.04);
-        -ms-transform: scale(1.04);
-        transform: scale(1.04);
+      .postlinkbox:hover .postlinkbox-image {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
     }
 </style>

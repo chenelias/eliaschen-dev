@@ -1,6 +1,7 @@
 ---
 import React from 'react'
 import { Image, Picture } from '@astrojs/image/components'
+import BadgeTag from '../BadgeTag.astro'
 const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
@@ -13,24 +14,30 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                 .filter((item, index) => index < 2)
                 .map((post) => (
-                    <li class="postlinkbox">
+                    <li class="postlinkbox m-1">
                         <a href={post.frontmatter.url}>
                             <Image
                                 class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                 alt={`${post.frontmatter.title} - EliasChen.dev`}
                                 width={720 * 2}
                                 aspectRatio={1.7}
-                                src={
-                                    post.frontmatter.heroImage
-                                }
+                                src={post.frontmatter.heroImage}
                             />
                             <div class=" rounded-b-lg p-4 ">
                                 <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                     {post.frontmatter.title}
                                 </h1>
-                                <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
-                                    #{post.frontmatter.tags}
-                                </div>
+
+                                {post.frontmatter.tag1 && <BadgeTag>{post.frontmatter.tag1}</BadgeTag>}
+                                {post.frontmatter.tag2 && <BadgeTag>{post.frontmatter.tag2}</BadgeTag>}
+                                {post.frontmatter.tag3 && <BadgeTag>{post.frontmatter.tag3}</BadgeTag>}
+                                {post.frontmatter.tag4 && <BadgeTag>{post.frontmatter.tag4}</BadgeTag>}
+                                {post.frontmatter.tag5 && <BadgeTag>{post.frontmatter.tag5}</BadgeTag>}
+                                {post.frontmatter.tag6 && <BadgeTag>{post.frontmatter.tag6}</BadgeTag>}
+                                {post.frontmatter.tag7 && <BadgeTag>{post.frontmatter.tag7}</BadgeTag>}
+                                {post.frontmatter.tag8 && <BadgeTag>{post.frontmatter.tag8}</BadgeTag>}
+                                {post.frontmatter.tag9 && <BadgeTag>{post.frontmatter.tag9}</BadgeTag>}
+
                                 <p class="text-right">{post.frontmatter.date}</p>
                             </div>
                         </a>
@@ -44,10 +51,10 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
         text-decoration: underline;
     }
     .postlinkbox:hover .postlinkbox-image {
-        -webkit-transform: scale(1.04);
-        -moz-transform: scale(1.04);
-        -o-transform: scale(1.04);
-        -ms-transform: scale(1.04);
-        transform: scale(1.04);
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
     }
 </style>

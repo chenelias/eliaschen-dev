@@ -5,22 +5,30 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
-
+import BadgeTag from '../components/BadgeTag.astro'
 export interface Props {
     content: {
-        date?:string
+        date?: string
         title: string
         description: string
         createdAt?: string
         updatedAt?: string
         heroImage?: string
-        tags: string[]
+        tag1?: string
+        tag2?: string
+        tag3?: string
+        tag4?: string
+        tag5?: string
+        tag6?: string
+        tag7?: string
+        tag8?: string
+        tag9?: string
         fortime?: string
     }
 }
 
 const {
-    content: { title, description, heroImage,date, tags, fortime },
+    content: { title, description, heroImage, date, tag1, tag2, tag3, tag4, tag5, tag6, tag7, tag8, tag9, fortime },
 } = Astro.props
 ---
 
@@ -48,9 +56,15 @@ const {
                 <!-- <div class="h-[4px] w-[40px] rounded-xl bg-orange-500"></div> -->
                 <h1 class="text-3xl my-1 font-bold font-mplus text-orange-500">{title}</h1>
                 <p class="text-md font-bold">{date}</p>
-                <p class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
-                    {tags}
-                </p>
+                {tag1 && <BadgeTag>{tag1}</BadgeTag>}
+                {tag2 && <BadgeTag>{tag2}</BadgeTag>}
+                {tag3 && <BadgeTag>{tag3}</BadgeTag>}
+                {tag4 && <BadgeTag>{tag4}</BadgeTag>}
+                {tag5 && <BadgeTag>{tag5}</BadgeTag>}
+                {tag6 && <BadgeTag>{tag6}</BadgeTag>}
+                {tag7 && <BadgeTag>{tag7}</BadgeTag>}
+                {tag8 && <BadgeTag>{tag8}</BadgeTag>}
+                {tag9 && <BadgeTag>{tag9}</BadgeTag>}
                 <div>{description}</div>
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
