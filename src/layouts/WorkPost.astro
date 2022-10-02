@@ -10,7 +10,9 @@ import { FiExternalLink } from 'react-icons/fi/index.js'
 
 export interface Props {
     content: {
-        fortime: string
+        darkImage?:string
+        lightImage?:string
+        fortime?: string
         state?: string
         title: string
         description: string
@@ -51,6 +53,9 @@ const {
         license,
         startAt,
         endAt,
+        darkImage
+        ,lightImage
+        
     },
 } = Astro.props
 ---
@@ -58,7 +63,7 @@ const {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <BaseHead title={title} description={description} />
+        <BaseHead title={`${title} - EliasChen`} description={description} />
     </head>
 
     <Body>
@@ -67,14 +72,21 @@ const {
             <Content className="pt-6">
                 <div class="mb-3">
                     {
-                        heroImage && (
+                        darkImage && (
                             <img
-                                class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-                                src={heroImage}
-                                alt="WorksImage"
+                                class="dark:block hidden border-slate-300 dark:border-slate-700 rounded-xl"
+                                src={darkImage}
+                                alt={title}
+                            />
+                            <img
+                                class="dark:hidden block border border-slate-300 dark:border-zinc-700 rounded-xl"
+                                src={lightImage}
+                                alt={title}
                             />
                         )
                     }
+                    {heroImage&&<img class="block border border-slate-300 dark:border-zinc-700 rounded-xl" src={heroImage} alt={title} />}
+                    
                 </div>
                 <div class="flex items-center">
                     {

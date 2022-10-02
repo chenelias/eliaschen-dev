@@ -7,7 +7,7 @@ const posts = (await Astro.glob('../../pages/posts/*.mdx')).sort(
 ---
 
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 m-4">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 m-1">
         {
             posts
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))

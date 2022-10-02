@@ -5,8 +5,9 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
     (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
 )
 ---
+
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 m-2 mt-3">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 m-1">
         {
             posts
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
@@ -14,13 +15,22 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
                 .map((post) => (
                     <li class="postlinkbox ">
                         <a href={post.frontmatter.url}>
-                            <Image
-                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
-                                width={720 * 2}
-                                aspectRatio={1.7}
-                                src={post.frontmatter.lightImage}
-                                alt="PostImage - EliasChen.dev"
-                            />
+                      {post.frontmatter.lightImage &&    
+                                        <Image
+                                            class="dark:hidden block postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                            src={post.frontmatter.lightImage}
+                                            alt="PostImage - EliasChen.dev"
+                                            width={720 * 2}
+                                            aspectRatio={1.7}
+                                        />
+                                        <Image
+                                            class="dark:block hidden postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                            src={post.frontmatter.darkImage}
+                                            alt="PostImage - EliasChen.dev"
+                                            width={720 * 2}
+                                            aspectRatio={1.7}
+                                        />}
+{post.frontmatter.heroImage &&<img class="block border border-slate-300 dark:border-zinc-700 rounded-xl" src={post.frontmatter.heroImage} alt={post.frontmatter.heroImage} />}
                             <div class=" rounded-b-lg p-4 ">
                                 <h1 class="postlinkbox-title mb-0 text-2xl font-mplus font-bold ">
                                     {post.frontmatter.title}
@@ -38,7 +48,7 @@ const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
                                     <div class="bg-purple-300 dark:bg-orange-500 font-bold rounded-md inline-flex text-xs px-1 py-[2px] mr-1">
                                         {post.frontmatter.platform}
                                     </div>
-                                    <div class="bg-green-300 dark:bg-green-800 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
+                                    <div class="bg-green-300 dark:bg-blue-900 font-bold rounded-md inline-flex text-xs px-1 py-[2px]">
                                         {post.frontmatter.stack}
                                     </div>
                                 </div>
