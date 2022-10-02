@@ -40,7 +40,7 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                                                     alt={`${post.frontmatter.title} - EliasChen.dev`}
                                                     src={
                                                         post.frontmatter.heroImage === undefined
-                                                            ? '../../public/placeholder-postdefault.jpg'
+                                                            ? '../../../public/placeholder-postdefault.jpg'
                                                             : post.frontmatter.heroImage
                                                     }
                                                     width={720 * 2}
