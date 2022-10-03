@@ -2,9 +2,7 @@
 import React from 'react'
 import { Image, Picture } from '@astrojs/image/components'
 import BadgeWork from '../BadgeWork.astro';
-const posts = (await Astro.glob('../../pages/works/*.mdx')).sort(
-    (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
-)
+const posts = (await Astro.glob('../../pages/works/*.mdx'))
 ---
 
 <div>

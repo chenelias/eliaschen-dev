@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-const Search = () => {
-    const [searchtext, setSearchText] = useState('')
+export function getStateSearch(){
 
+}
+
+function Search(){
+    const [searchtext, setSearchText] = useState('')
     return (
         <div>
             <input

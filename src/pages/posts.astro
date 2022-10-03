@@ -11,9 +11,7 @@ import BadgeTag from '../components/BadgeTag.astro'
 import { Image } from '@astrojs/image/components'
 import React, { useState } from 'react'
 import Search from '../components/Search'
-const posts = (await Astro.glob('./posts/*.mdx')).sort(
-    (a: any, b: any) => new Date(b.frontmatter.createdAt).valueOf() - new Date(a.frontmatter.createdAt).valueOf()
-)
+const posts = await Astro.glob('./posts/*.mdx')
 ---
 
 <!DOCTYPE html>
@@ -37,7 +35,11 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
                             {
                                 posts
                                     .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
-                                    .filter((post) => post.frontmatter.title.includes(''))
+                                    .filter(
+                                        (post) =>
+                                            post.frontmatter.title.toUpperCase().includes('') ||
+                                            post.frontmatter.title.toLowerCase().includes('')
+                                    )
                                     .map((post) => (
                                         <li class="postlinkbox m-1">
                                             <a href={post.frontmatter.url}>
@@ -116,4 +118,5 @@ const posts = (await Astro.glob('./posts/*.mdx')).sort(
             }
         }
     </style>
+
 </html>
