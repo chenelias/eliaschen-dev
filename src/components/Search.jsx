@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-export function getStateSearch(){
+export function getStateSearch() {}
 
-}
-
-function Search(){
+function Search() {
     const [searchtext, setSearchText] = useState('')
     return (
         <div>
@@ -15,7 +13,6 @@ function Search(){
                     setSearchText(e.target.value)
                 }}
             />
-          
         </div>
     )
 }

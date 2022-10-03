@@ -33,3 +33,259 @@ body::-webkit-scrollbar-thumb:hover {
 body::-webkit-scrollbar-thumb:active {
 	background-color: #666666;
 }
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* Global focus outline reset */
+*:focus:not(:focus-visible) {
+	outline: none;
+}
+
+:root {
+	--user-font-scale: 1rem - 16px;
+	--max-width: calc(100% - 1rem);
+}
+
+@media (min-width: 50em) {
+	:root {
+		--max-width: 46em;
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	font-size: clamp(0.9rem, 0.75rem + 0.375vw + var(--user-font-scale), 1rem);
+	line-height: 1.5;
+	max-width: 100vw;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+.content>section>*+* {
+	margin-top: 1.25rem;
+}
+
+.content>section> :first-child {
+	margin-top: 0;
+}
+
+a {
+	color: var(--theme-text-accent);
+	font-weight: 400;
+	text-underline-offset: 0.08em;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+article>section :is(ul, ol)>*+* {
+	margin-top: 0.75rem;
+}
+
+article>section nav :is(ul, ol)>*+* {
+	margin-top: inherit;
+}
+
+article>section li> :is(p, pre, blockquote):not(:first-child) {
+	margin-top: 1rem;
+}
+
+article>section :is(ul, ol) {
+	padding-left: 1em;
+}
+
+article>section nav :is(ul, ol) {
+	padding-left: inherit;
+}
+
+article>section nav {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
+article>section ::marker {
+	font-weight: bold;
+	color: var(--theme-text-light);
+}
+
+li {
+	margin-left: 5px;
+}
+
+article>section iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+}
+
+a>code {
+	position: relative;
+	color: var(--theme-text-accent);
+	background: transparent;
+	text-underline-offset: var(--padding-block);
+}
+
+a>code::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	background: var(--theme-accent);
+	opacity: var(--theme-accent-opacity);
+	border-radius: var(--border-radius);
+}
+
+strong {
+	font-weight: 600;
+	color: inherit;
+}
+
+code {
+	--border-radius: 6px;
+	--padding-block: 0.2rem;
+	--padding-inline: 0.33rem;
+	font-family: monospace;
+	font-size: 15px;
+	font-weight: normal;
+
+	background-color: rgba(255, 204, 0, 0.3);
+	padding: var(--padding-block) var(--padding-inline);
+	margin: calc(var(--padding-block) * -1) -0.125em;
+	border-radius: var(--border-radius);
+	word-break: break-word;
+	margin: 0px 5px;
+}
+
+pre.astro-code>code {
+	all: unset;
+}
+
+pre>code {
+	font-size: 15px;
+
+}
+
+table {
+	position: relative;
+	--padding-block: 1rem;
+	--padding-inline: 2rem;
+	padding: var(--padding-block) var(--padding-inline);
+	padding-right: calc(var(--padding-inline) * 2);
+	margin-left: calc(var(--padding-inline) * -1);
+	margin-right: calc(var(--padding-inline) * -1);
+	font-family: var(--font-mono);
+	line-height: 1.5;
+	font-size: 0.85em;
+	overflow-y: hidden;
+	overflow-x: auto
+}
+
+pre {
+	margin: 10px 0px;
+	padding: 15px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: 2px solid #fb923c;
+	transition: 0.1s;
+}
+
+pre::-webkit-scrollbar {
+	height: 8px;
+	width: 8px;
+	border-radius: 10px;
+}
+
+pre::-webkit-scrollbar-button {
+	width: 5px;
+	width: 5px;
+}
+
+pre::-webkit-scrollbar-track {
+	background: #0d1117;
+	border-radius: 30px;
+}
+
+pre::-webkit-scrollbar-thumb {
+	background-color: #444444;
+	border-radius: 10px;
+	border: none;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+	border-radius: 10px;
+	background-color: #555555;
+}
+
+pre::-webkit-scrollbar-thumb:active {
+	border-radius: 10px;
+	background-color: #666666;
+}
+
+table {
+	width: 100%;
+	padding: var(--padding-block) 0;
+	margin: 10px;
+	border-collapse: collapse;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+	background: var(--theme-bg-hover);
+}
+
+th {
+	background: var(--color-black);
+	color: var(--theme-color);
+	font-weight: bold;
+}
+
+td,
+th {
+	padding: 6px;
+	text-align: left;
+}
+
+pre {
+	background-color: var(--theme-code-bg);
+	color: var(--theme-code-text);
+}
+
+blockquote code {
+	background-color: var(--theme-bg);
+}
+
+@media (min-width: 37.75em) {
+	pre {
+		--padding-inline: 1.25rem;
+		border-radius: 8px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+blockquote {
+	margin: 10px 0px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border-left: solid 6px #a855f7;
+	border-top: solid 1px #a855f7;
+	border-right: solid 1px #a855f7;
+	border-bottom: solid 1px #a855f7;
+	font-size: 17px;
+}
+
+img {
+	max-width: 100%;
+}
