@@ -3,8 +3,10 @@ import { Fragment, useState } from 'react'
 import { FaRegShareSquare } from 'react-icons/fa/index.js'
 import { HiOutlineClipboardCopy } from 'react-icons/hi/index.js'
 import { TiTick } from 'react-icons/ti/index.js'
+import React, { useEffect } from 'react'
+import { ShareSocial } from 'react-share-social'
 export default function MediaShare() {
-    let [isOpen, setIsOpen] = useState(false)
+    let [isOpen, setIsOpen] = useState(true)
     const [copystate, setcopystate] = useState(false)
     function closeModal() {
         setIsOpen(false)
@@ -13,13 +15,15 @@ export default function MediaShare() {
     function openModal() {
         setIsOpen(true)
     }
-
     async function CopyLink() {
         navigator.clipboard.writeText(window.location.href)
         setcopystate(true)
         setTimeout(function () {
             setcopystate(false)
         }, 3000)
+    }
+    function GetFacebookShareLink() {
+        return window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href)
     }
     return (
         <div>
@@ -63,7 +67,7 @@ export default function MediaShare() {
                                     <button
                                         type="button"
                                         className="inline-flex justify-center rounded-md border dark:bg-zinc-700 bg-orange-100 p-2 px-5 font-medium shadow-sm hover:bg-orange-50 dark:hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
-                                            w-full focus:ring-offset-gray-100 transition-all my-2"
+                                            w-full focus:ring-offset-gray-100 transition-all my-1"
                                         onClick={CopyLink}
                                     >
                                         <p className="tetx-center w-fll">
@@ -80,9 +84,17 @@ export default function MediaShare() {
                                         )}
                                     </button>
                                     <button
+                                        target="_blank"
+                                        onClick={GetFacebookShareLink}
+                                        className="inline-flex justify-center rounded-md border bg-blue-300 p-2 px-5 font-medium shadow-sm dark:bg-red-600 hover:bg-blue-400 dark:hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1"
+                                    >
+                                        <p>Facebook</p>
+                                    </button>
+                                    <button
                                         type="button"
                                         className="inline-flex justify-center rounded-md border bg-red-400 p-2 px-5 font-medium shadow-sm dark:bg-red-600 hover:bg-red-500 dark:hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
-                                            w-full focus:ring-offset-gray-100 transition-all my-2"
+                                            w-full focus:ring-offset-gray-100 transition-all my-1"
                                         onClick={closeModal}
                                     >
                                         <p>Close</p>
