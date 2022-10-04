@@ -3,7 +3,7 @@ import { Typewriter } from 'react-simple-typewriter'
 const TypeTitle = () => {
     return (
         <div className="inline-flex">
-            <h1>#</h1>
+            <h1 className="m-0">#</h1>
             <Typewriter
                 words={['Develop Tips', 'Front-End Dev', 'Hacking', 'Something New', 'My Works']}
                 loop={0}

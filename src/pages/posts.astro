@@ -4,7 +4,6 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
-import Content from '../components/Content.astro'
 import ContentXL from '../components/ContentXL.astro'
 import TypePosts from '../components/Typing/TypePosts'
 import BadgeTag from '../components/BadgeTag.astro'
@@ -23,11 +22,10 @@ var searchtext = ''
         <main class="pt-[100px]">
             <ContentXL>
                 <div>
-                    <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                    <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                         <TypePosts client:visible />
-                    </h1>
+                    </h3>
                     <div class="text-center mt-5">
-                        <Search client:load />
                         <input
                             type="text"
                             placeholder="Search Posts"
@@ -60,7 +58,7 @@ var searchtext = ''
                                                     width={720 * 2}
                                                     aspectRatio={1.7}
                                                 />
-                                                <div class=" rounded-b-lg py-4 px-2 ">
+                                                <div class=" rounded-b-lg pt-4 px-2 ">
                                                     <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                                         {post.frontmatter.title}
                                                     </h1>

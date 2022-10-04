@@ -21,10 +21,10 @@ const posts = await Astro.glob('../../pages/posts/*.mdx')
                                 aspectRatio={1.7}
                                 src={post.frontmatter.heroImage}
                             />
-                            <div class=" rounded-b-lg p-4 ">
-                                <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
+                            <div class=" rounded-b-lg px-4 pt-4 ">
+                                <h3 class="postlinkbox-title text-2xl font-mplus font-bold ">
                                     {post.frontmatter.title}
-                                </h1>
+                                </h3>
 
                                 {post.frontmatter.tag1 && <BadgeTag>{post.frontmatter.tag1}</BadgeTag>}
                                 {post.frontmatter.tag2 && <BadgeTag>{post.frontmatter.tag2}</BadgeTag>}

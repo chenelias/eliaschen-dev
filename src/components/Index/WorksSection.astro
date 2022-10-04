@@ -34,10 +34,10 @@ const posts = (await Astro.glob('../../pages/works/*.mdx'))
                                         ? '/public/placeholder-workdefault.jpg'
                                         : post.frontmatter.heroImage
                                 }  alt={`${post.frontmatter.title} - EliasChen.dev`} />}
-                            <div class=" rounded-b-lg p-4 ">
-                                <h1 class="postlinkbox-title mb-0 text-2xl font-mplus font-bold ">
+                            <div class=" rounded-b-lg px-4 pt-4 ">
+                                <h3 class="postlinkbox-title mb-0 text-2xl font-mplus font-bold ">
                                     {post.frontmatter.title}
-                                </h1>
+                                </h3>
                                 <div class="flex">
                                     <p>
                                         {post.frontmatter.startAt}
