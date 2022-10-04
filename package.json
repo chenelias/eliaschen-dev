@@ -21,6 +21,7 @@
         "@astrojs/tailwind": "^1.0.1",
         "@code-hike/mdx": "^0.7.4",
         "@headlessui/react": "^1.7.2",
+        "@prismicio/helpers": "^2.3.5",
         "astro": "^1.2.3",
         "framer-motion": "^7.5.0",
         "preact": "^10.11.0",

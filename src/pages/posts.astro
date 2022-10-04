@@ -9,16 +9,15 @@ import ContentXL from '../components/ContentXL.astro'
 import TypePosts from '../components/Typing/TypePosts'
 import BadgeTag from '../components/BadgeTag.astro'
 import { Image } from '@astrojs/image/components'
-import React, { useState } from 'react'
 import Search from '../components/Search'
 const posts = await Astro.glob('./posts/*.mdx')
+var searchtext = ''
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <BaseHead title="EliasChen - Posts" description="Share my around of Develop with posts" />
-    </head>
+    <BaseHead title="EliasChen - Posts" description="Share my around of Develop with posts" />
+
     <Body>
         <Header title="EliasChen - Posts" />
         <main class="pt-[100px]">
@@ -28,21 +27,24 @@ const posts = await Astro.glob('./posts/*.mdx')
                         <TypePosts client:visible />
                     </h1>
                     <div class="text-center mt-5">
+                        <Search client:load />
                         <input
                             type="text"
                             placeholder="Search Posts"
                             class="input-search inline-flex justify-center rounded-md border-2 border-zinc-400 p-3 text-xl font-medium shadow-sm hover: dark:hover:bg-zinc-700 hover:bg-orange-100 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 dark:focus:ring-offset-zinc-900 focus:ring-offset-orange-50 transition-all"
+                            id="searchinput"
                         />
                     </div>
                     <div>
+                        <p></p>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                             {
                                 posts
                                     .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                                     .filter(
                                         (post) =>
-                                            post.frontmatter.title.toUpperCase().includes('') ||
-                                            post.frontmatter.title.toLowerCase().includes('')
+                                            post.frontmatter.title.toUpperCase().includes(searchtext) ||
+                                            post.frontmatter.title.toLowerCase().includes(searchtext)
                                     )
                                     .map((post) => (
                                         <li class="postlinkbox m-1">
@@ -122,4 +124,6 @@ const posts = await Astro.glob('./posts/*.mdx')
             }
         }
     </style>
+
+
 </html>

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-export function getStateSearch() {}
+// import {posts} from '../pages/posts.astro'
+export function stateShare(){
 
-function Search() {
     const [searchtext, setSearchText] = useState('')
+    return setSearchText,searchtext
+}
+function Search({ setSearchText, searchtext }) {
     return (
         <div>
             <input
