@@ -6,7 +6,7 @@ import { TiTick } from 'react-icons/ti/index.js'
 import { BsFacebook, BsTwitter ,BsLine} from 'react-icons/bs/index.js'
 import React, { useEffect } from 'react'
 export default function MediaShare() {
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
     const [copystate, setcopystate] = useState(false)
     function closeModal() {
         setIsOpen(false)
