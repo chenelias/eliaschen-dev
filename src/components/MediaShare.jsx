@@ -3,8 +3,8 @@ import { Fragment, useState } from 'react'
 import { FaRegShareSquare } from 'react-icons/fa/index.js'
 import { HiOutlineClipboardCopy } from 'react-icons/hi/index.js'
 import { TiTick } from 'react-icons/ti/index.js'
+import { BsFacebook, BsTwitter ,BsLine} from 'react-icons/bs/index.js'
 import React, { useEffect } from 'react'
-import { ShareSocial } from 'react-share-social'
 export default function MediaShare() {
     let [isOpen, setIsOpen] = useState(true)
     const [copystate, setcopystate] = useState(false)
@@ -24,6 +24,12 @@ export default function MediaShare() {
     }
     function GetFacebookShareLink() {
         return window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href)
+    }
+    function GetTwitterShareLink() {
+        return window.open('http://www.twitter.com/share?url=' + window.location.href)
+    }
+    function GetLineShareLink() {
+        return window.open('http://social-plugins.line.me/lineit/share?url=' + window.location.href)
     }
     return (
         <div>
@@ -70,9 +76,6 @@ export default function MediaShare() {
                                             w-full focus:ring-offset-gray-100 transition-all my-1"
                                         onClick={CopyLink}
                                     >
-                                        <p className="tetx-center w-fll">
-                                            {copystate ? 'Copied Success' : 'Copy link'}&thinsp;
-                                        </p>
                                         {copystate ? (
                                             <span className=" w-fll text-2xl">
                                                 <TiTick />
@@ -82,14 +85,42 @@ export default function MediaShare() {
                                                 <HiOutlineClipboardCopy />
                                             </span>
                                         )}
+                                        <p className="tetx-center w-fll ml-1">
+                                            {copystate ? 'Copied Success' : 'Copy link'}&thinsp;
+                                        </p>
                                     </button>
                                     <button
                                         target="_blank"
                                         onClick={GetFacebookShareLink}
-                                        className="inline-flex justify-center rounded-md border bg-blue-300 p-2 px-5 font-medium shadow-sm dark:bg-red-600 hover:bg-blue-400 dark:hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
-                                            w-full focus:ring-offset-gray-100 transition-all my-1"
+                                        className="justify-center rounded-md border bg-blue-500 p-2 px-5 font-medium shadow-sm dark:bg-blue-700 hover:bg-blue-600 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1 flex items-center"
                                     >
-                                        <p>Facebook</p>
+                                        <p className="text-xl mr-1">
+                                            <BsFacebook />
+                                        </p>
+                                        <p className=" ">Facebook</p>
+                                    </button>
+                                    <button
+                                        target="_blank"
+                                        onClick={GetTwitterShareLink}
+                                        className="inline-flex justify-center rounded-md border bg-blue-300 p-2 px-5 font-medium shadow-sm dark:bg-blue-500 hover:bg-blue-400 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1 items-center"
+                                    >
+                                        <p className="text-xl mr-1">
+                                            <BsTwitter />
+                                        </p>
+                                        <p>Twitter</p>
+                                    </button>
+                                    <button
+                                        target="_blank"
+                                        onClick={GetLineShareLink}
+                                        className="inline-flex justify-center rounded-md border bg-green-400 p-2 px-5 font-medium shadow-sm dark:bg-green-600 hover:bg-green-300 dark:hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1 items-center"
+                                    >
+                                        <p className="text-xl mr-1">
+                                            <BsLine />
+                                        </p>
+                                        <p>Line</p>
                                     </button>
                                     <button
                                         type="button"
