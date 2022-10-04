@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
 import { FiExternalLink } from 'react-icons/fi/index.js'
+import MediaShare from '../components/MediaShare.jsx'
 // import { theme } from '../components/Header/ThemeToggleButton'
 
 export interface Props {
@@ -88,7 +89,7 @@ const {
                     {heroImage&&<img class="block border border-slate-300 dark:border-zinc-700 rounded-xl" src={heroImage} alt={title} />}
                     
                 </div>
-                <div class="flex items-center">
+                <div class="inline-flex items-center">
                     {
                         icon && (
                             <img
@@ -163,10 +164,12 @@ const {
                                 {sourcePlatform}
                                 <FiExternalLink />
                             </a>
+                            </div>
+                            )
+                        }
+                        <div class="flex items-center float-right relative ">
+                            <MediaShare client:visible />
                         </div>
-                    )
-                }
-
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>

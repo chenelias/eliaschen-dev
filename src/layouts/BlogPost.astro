@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import ContentXL from '../components/ContentXL.astro'
 import BadgeTag from '../components/BadgeTag.astro'
+import MediaShare from '../components/MediaShare.jsx'
 export interface Props {
     content: {
         date?: string
@@ -66,6 +67,9 @@ const {
                 {tag8 && <BadgeTag>{tag8}</BadgeTag>}
                 {tag9 && <BadgeTag>{tag9}</BadgeTag>}
                 <div>{description}</div>
+                <div class="flex items-center float-right relative">
+                    <MediaShare client:visible />
+                </div>
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>
