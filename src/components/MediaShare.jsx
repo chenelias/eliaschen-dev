@@ -3,10 +3,10 @@ import { Fragment, useState } from 'react'
 import { FaRegShareSquare } from 'react-icons/fa/index.js'
 import { HiOutlineClipboardCopy } from 'react-icons/hi/index.js'
 import { TiTick } from 'react-icons/ti/index.js'
-import { BsFacebook, BsTwitter ,BsLine} from 'react-icons/bs/index.js'
+import { BsFacebook, BsTwitter, BsLine } from 'react-icons/bs/index.js'
 import React, { useEffect } from 'react'
 export default function MediaShare() {
-    let [isOpen, setIsOpen] = useState(false)
+    let [isOpen, setIsOpen] = useState(true)
     const [copystate, setcopystate] = useState(false)
     function closeModal() {
         setIsOpen(false)
@@ -124,8 +124,8 @@ export default function MediaShare() {
                                     </button>
                                     <button
                                         type="button"
-                                        className="inline-flex justify-center rounded-md border bg-red-400 p-2 px-5 font-medium shadow-sm dark:bg-red-600 hover:bg-red-500 dark:hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
-                                            w-full focus:ring-offset-gray-100 transition-all my-1"
+                                        className="inline-flex text-lg justify-center rounded-md border bg-gray-300 p-2 px-5  shadow-sm dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1 font-bold"
                                         onClick={closeModal}
                                     >
                                         <p>Close</p>

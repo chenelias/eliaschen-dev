@@ -34,15 +34,15 @@ var searchtext = ''
                         />
                     </div>
                     <div>
-                        <p></p>
+                        <p></p>document.querySelector
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
                             {
                                 posts
                                     .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                                     .filter(
                                         (post) =>
-                                            post.frontmatter.title.toUpperCase().includes(searchtext) ||
-                                            post.frontmatter.title.toLowerCase().includes(searchtext)
+                                            post.frontmatter.title.toUpperCase().includes('') ||
+                                            post.frontmatter.title.toLowerCase().includes('')
                                     )
                                     .map((post) => (
                                         <li class="postlinkbox m-1">
