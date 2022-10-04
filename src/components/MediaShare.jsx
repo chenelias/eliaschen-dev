@@ -1,9 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import { FaRegShareSquare } from 'react-icons/fa'
+import { FaRegShareSquare } from 'react-icons/fa/index.js'
 import { HiOutlineClipboardCopy } from 'react-icons/hi/index.js'
 import { TiTick } from 'react-icons/ti/index.js'
-import { HOMEPAGE_URL } from '../config'
 export default function MediaShare() {
     let [isOpen, setIsOpen] = useState(false)
     const [copystate, setcopystate] = useState(false)
@@ -23,7 +22,7 @@ export default function MediaShare() {
         }, 3000)
     }
     return (
-        <>
+        <div>
             <div title="Share This Page" className="inset-0 flex items-center justify-center">
                 <button
                     type="button"
@@ -94,6 +93,6 @@ export default function MediaShare() {
                     </div>
                 </Dialog>
             </Transition>
-        </>
+        </div>
     )
 }
