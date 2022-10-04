@@ -199,6 +199,7 @@ pre {
 	border-radius: 10px;
 	border: 2px solid #fb923c;
 	transition: 0.1s;
+	background-color: #392929!important;
 }
 
 pre::-webkit-scrollbar {
