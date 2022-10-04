@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
-import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
 import BadgeTag from '../components/BadgeTag.astro'
 export interface Props {
     content: {
@@ -41,7 +41,7 @@ const {
     <Body>
         <Header />
         <main class="pt-[56px]">
-            <Content className="pt-6">
+            <ContentXL className="pt-6">
                 <div class="mb-4">
                     {
                         heroImage && (
@@ -69,7 +69,7 @@ const {
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>
-            </Content>
+            </ContentXL>
         </main>
         <Footer />
     </Body>
