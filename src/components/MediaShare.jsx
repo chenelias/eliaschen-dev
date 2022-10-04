@@ -1,8 +1,8 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { FaRegShareSquare } from 'react-icons/fa'
-import { HiOutlineClipboardCopy } from 'react-icons/hi'
-import { TiTick } from 'react-icons/ti'
+import { HiOutlineClipboardCopy } from 'react-icons/hi/index.js'
+import { TiTick } from 'react-icons/ti/index.js'
 import { HOMEPAGE_URL } from '../config'
 export default function MediaShare() {
     let [isOpen, setIsOpen] = useState(false)
