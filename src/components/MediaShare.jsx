@@ -27,7 +27,7 @@ export default function MediaShare() {
                 <button
                     type="button"
                     onClick={openModal}
-                    className="rounded-md flex p-2 text-2xl font-medium text-black hover:bg-black dark:hover:bg-white dark:hover:bg-opacity-30 dark:text-white dark:active:bg-opacity-10 hover:bg-opacity-20 active:bg-opacity-5  focus:outline-none focus-visible:ring-2 duration-100 focus-visible:ring-white focus-visible:ring-opacity-75 items-center"
+                    className="rounded-md flex p-2 text-2xl font-medium text-black hover:bg-black dark:hover:bg-white dark:hover:bg-opacity-30 dark:text-white dark:active:bg-opacity-10 hover:bg-opacity-20 active:bg-opacity-5  focus:outline-none focus-visible:ring-2 duration-100 focus-visible:ring-white focus-visible:ring-opacity-75 items-center ml-1"
                 >
                     <FaRegShareSquare />
                 </button>
