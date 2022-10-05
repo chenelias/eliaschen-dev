@@ -6,15 +6,29 @@ import { TiTick } from 'react-icons/ti/index.js'
 import { BsFacebook, BsTwitter, BsLine } from 'react-icons/bs/index.js'
 import React, { useEffect } from 'react'
 export default function MediaShare() {
-    let [isOpen, setIsOpen] = useState(true)
+    let [isOpen, setIsOpen] = useState(false)
     const [copystate, setcopystate] = useState(false)
+    const sharedetail = {
+        title: '',
+        text: '',
+        url: '',
+    }
+    async function Shareapiuse() {
+        try {
+            await navigator.share(sharedetail)
+        } catch (err) {
+            alert(
+                `${err}\nYour browser does not support navigator Share API , this function not support on Firefox、WebView-Android`
+            )
+        }
+    }
+    function openModal() {
+        setIsOpen(true)
+    }
     function closeModal() {
         setIsOpen(false)
     }
 
-    function openModal() {
-        setIsOpen(true)
-    }
     async function CopyLink() {
         navigator.clipboard.writeText(window.location.href)
         setcopystate(true)
@@ -88,6 +102,16 @@ export default function MediaShare() {
                                         <p className="tetx-center w-fll ml-1">
                                             {copystate ? 'Copied Success' : 'Copy link'}&thinsp;
                                         </p>
+                                    </button>
+                                    <button
+                                        onClick={Shareapiuse}
+                                        className="items-center inline-flex justify-center rounded-md border dark:bg-zinc-700 bg-orange-100 p-2 px-5 font-medium shadow-sm hover:bg-orange-50 dark:hover:bg-zinc-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 
+                                            w-full focus:ring-offset-gray-100 transition-all my-1"
+                                    >
+                                        <p className="text-xl mr-1">
+                                            <FaRegShareSquare />
+                                        </p>
+                                        <p className=" ">Share with borwser</p>
                                     </button>
                                     <button
                                         target="_blank"
