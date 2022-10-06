@@ -25,11 +25,28 @@ export interface Props {
         tag8?: string
         tag9?: string
         fortime?: string
+        source?: string
     }
 }
 
 const {
-    content: { title, description, heroImage, date, tag1, tag2, tag3, tag4, tag5, tag6, tag7, tag8, tag9, fortime },
+    content: {
+        title,
+        description,
+        source,
+        heroImage,
+        date,
+        tag1,
+        tag2,
+        tag3,
+        tag4,
+        tag5,
+        tag6,
+        tag7,
+        tag8,
+        tag9,
+        fortime,
+    },
 } = Astro.props
 ---
 
@@ -72,7 +89,8 @@ const {
                 <hr class="border-top border-zinc-400 my-4" />
                 <slot />
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>
-            </ContentXL>
+                {source && <p class="text-xs mt-[20px] float-right">Source:&thinsp;{source}</p>}
+            </ContentXL> 
         </main>
         <Footer />
     </Body>
