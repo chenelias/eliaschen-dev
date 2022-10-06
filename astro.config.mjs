@@ -5,7 +5,6 @@ import image from '@astrojs/image'
 import tailwind from '@astrojs/tailwind'
 import addClasses from 'rehype-add-classes'
 import mdx from '@astrojs/mdx'
-
 import preact from '@astrojs/preact'
 
 // https://astro.build/config

@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-export function getStateSearch() {}
-
 function Search() {
     const [searchtext, setSearchText] = useState('')
-    document.getElementById('output')
     return (
         <div>
             <input
@@ -14,7 +11,7 @@ function Search() {
                     setSearchText(e.target.value)
                 }}
             />
-            <div id='output'>{searchtext}</div>
+            <mark id="output">{searchtext}</mark>
         </div>
     )
 }
