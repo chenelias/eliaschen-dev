@@ -11,109 +11,94 @@ import { Image } from '@astrojs/image/components'
 const posts = await Astro.glob('./posts/*.mdx')
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-    <BaseHead title="EliasChen - Posts" description="Share my around of Develop with posts" />
+<script is:inline>
+    console.log(document, window)
+</script>
 
-    <Body>
-        <Header title="EliasChen - Posts" />
-        <main class="pt-[100px]">
-            <ContentXL>
-                <div>
-                    <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
-                        <TypePosts client:visible />
-                    </h3>
-                    <div class="text-center mt-5">
-                       
-                    </div>
-                    <div>
-                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-                            {
-                                posts
-                                    .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
-                                    .filter(
-                                        (post) =>
-                                            post.frontmatter.title.toUpperCase().includes('') ||
-                                            post.frontmatter.title.toLowerCase().includes('')
-                                    )
-                                    .map((post) => (
-                                        <li class="postlinkbox m-1">
-                                            <a href={post.frontmatter.url}>
-                                                <Image
-                                                    class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
-                                                    alt={`${post.frontmatter.title} - EliasChen.dev`}
-                                                    src={
-                                                        post.frontmatter.heroImage === undefined
-                                                            ? '../../../public/placeholder-postdefault.jpg'
-                                                            : post.frontmatter.heroImage
-                                                    }
-                                                    width={720 * 2}
-                                                    aspectRatio={1.7}
-                                                />
-                                                <div class=" rounded-b-lg pt-4 px-2 ">
-                                                    <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
-                                                        {post.frontmatter.title}
-                                                    </h1>
-                                                    {post.frontmatter.tag1 && (
-                                                        <BadgeTag>{post.frontmatter.tag1}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag2 && (
-                                                        <BadgeTag>{post.frontmatter.tag2}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag3 && (
-                                                        <BadgeTag>{post.frontmatter.tag3}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag4 && (
-                                                        <BadgeTag>{post.frontmatter.tag4}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag5 && (
-                                                        <BadgeTag>{post.frontmatter.tag5}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag6 && (
-                                                        <BadgeTag>{post.frontmatter.tag6}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag7 && (
-                                                        <BadgeTag>{post.frontmatter.tag7}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag8 && (
-                                                        <BadgeTag>{post.frontmatter.tag8}</BadgeTag>
-                                                    )}
-                                                    {post.frontmatter.tag9 && (
-                                                        <BadgeTag>{post.frontmatter.tag9}</BadgeTag>
-                                                    )}
-                                                    <p class="text-right">{post.frontmatter.date}</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    ))
-                            }
-                        </ul>
-                    </div>
+<BaseHead title="EliasChen - Posts" description="Share something around of Develop with posts" />
+<Body>
+    <Header title="EliasChen - Posts" />
+    <main class="pt-[100px]">
+        <ContentXL>
+            <div>
+                <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                    <TypePosts client:visible />
+                </h3>
+                <div class="text-center mt-5">
+                    <input
+                        type="text"
+                        placeholder="Search Posts"
+                        class="input-search inline-flex justify-center rounded-md border-2 border-zinc-400 p-3 text-xl font-medium shadow-sm hover: dark:hover:bg-zinc-700 hover:bg-orange-100 bg-orange-50 dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 dark:focus:ring-offset-zinc-900 focus:ring-offset-orange-50 transition-all"
+                        
+                    />
                 </div>
-            </ContentXL>
-        </main>
-        <Footer />
-    </Body>
-    <style>
-        .postlinkbox:hover .postlinkbox-title {
-            text-decoration: underline;
-        }
-        .postlinkbox:hover .postlinkbox-image {
-            -webkit-transform: scale(1.05);
-            -moz-transform: scale(1.05);
-            -o-transform: scale(1.05);
-            -ms-transform: scale(1.05);
-            transform: scale(1.05);
-        }
+                <div>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+                        {
+                            posts
+                                .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
+                                .filter(
+                                    (post) =>
+                                        post.frontmatter.title.toUpperCase().includes('') ||
+                                        post.frontmatter.title.toLowerCase().includes('')
+                                )
+                                .map((post) => (
+                                    <li class="postlinkbox m-1">
+                                        <a href={post.frontmatter.url}>
+                                            <Image
+                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                                alt={`${post.frontmatter.title} - EliasChen.dev`}
+                                                src={
+                                                    post.frontmatter.heroImage === undefined
+                                                        ? '../../../public/placeholder-postdefault.jpg'
+                                                        : post.frontmatter.heroImage
+                                                }
+                                                width={720 * 2}
+                                                aspectRatio={1.7}
+                                            />
+                                            <div class=" rounded-b-lg pt-4 px-2 ">
+                                                <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
+                                                    {post.frontmatter.title}
+                                                </h1>
+                                                {post.frontmatter.tag1 && <BadgeTag>{post.frontmatter.tag1}</BadgeTag>}
+                                                {post.frontmatter.tag2 && <BadgeTag>{post.frontmatter.tag2}</BadgeTag>}
+                                                {post.frontmatter.tag3 && <BadgeTag>{post.frontmatter.tag3}</BadgeTag>}
+                                                {post.frontmatter.tag4 && <BadgeTag>{post.frontmatter.tag4}</BadgeTag>}
+                                                {post.frontmatter.tag5 && <BadgeTag>{post.frontmatter.tag5}</BadgeTag>}
+                                                {post.frontmatter.tag6 && <BadgeTag>{post.frontmatter.tag6}</BadgeTag>}
+                                                {post.frontmatter.tag7 && <BadgeTag>{post.frontmatter.tag7}</BadgeTag>}
+                                                {post.frontmatter.tag8 && <BadgeTag>{post.frontmatter.tag8}</BadgeTag>}
+                                                {post.frontmatter.tag9 && <BadgeTag>{post.frontmatter.tag9}</BadgeTag>}
+                                                <p class="text-right">{post.frontmatter.date}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </ContentXL>
+    </main>
+    <Footer />
+</Body>
+<style>
+    .postlinkbox:hover .postlinkbox-title {
+        text-decoration: underline;
+    }
+    .postlinkbox:hover .postlinkbox-image {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    .input-search {
+        width: 260px;
+    }
+    @media only screen and (min-width: 650px) {
         .input-search {
-            width: 260px;
+            width: 600px;
         }
-        @media only screen and (min-width: 650px) {
-            .input-search {
-                width: 600px;
-            }
-        }
-    </style>
-
-
-</html>
+    }
+</style>
