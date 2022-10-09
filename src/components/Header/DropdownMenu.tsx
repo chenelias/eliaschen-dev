@@ -29,7 +29,7 @@ const DropdownMenu = () => {
                     <DropdownMenuItem href="/posts">Posts</DropdownMenuItem>
                     <DropdownMenuItem href="/works">Works</DropdownMenuItem>
                     <DropdownMenuItem href="https://github.com/chenelias/eliaschen-dev">
-                        <a href="https://github.com/chenelias/eliaschen-dev" target="_blank">
+                        <a className='no-underline' href="https://github.com/chenelias/eliaschen-dev" target="_blank">
                             Source
                         </a>
                     </DropdownMenuItem>

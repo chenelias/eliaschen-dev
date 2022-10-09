@@ -1,6 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 function Search() {
     const [searchtext, setSearchText] = useState('')
+    var searchcontent = ''
+    useEffect(() => {
+        return () => {
+            searchcontent = searchtext
+        };
+    }, [searchtext])
     return (
         <div>
             <input
@@ -11,7 +17,7 @@ function Search() {
                     setSearchText(e.target.value)
                 }}
             />
-            <mark id="output">{searchtext}</mark>
+            <mark id="output">{setSearchText}</mark>
         </div>
     )
 }
