@@ -166,11 +166,13 @@ const {
                             </div>
                             )
                         }
-                        <div class="flex items-center float-right relative ">
+                        <div class="flex items-center float-right relative">
                             <MediaShare client:visible />
                         </div>
-                <hr class="border-top border-zinc-400 my-4" />
-                <slot />
+                        <hr class="border-top border-zinc-400 my-5" />
+                        <div class="mt-7">
+                            <slot />
+                        </div>
                 <span class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"></span>
             </Content>
         </main>

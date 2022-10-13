@@ -17,9 +17,9 @@ export default function MediaShare() {
         try {
             await navigator.share(sharedetail)
         } catch (err) {
-            alert(
-                `${err}\nYour browser does not support navigator Share API , this function not support on Firefox、WebView-Android`
-            )
+            // alert(
+            //     `${err}\nYour browser does not support navigator Share API , this function not support on Firefox、WebView-Android`
+            // )
         }
     }
     function openModal() {
