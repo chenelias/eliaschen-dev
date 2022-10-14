@@ -36,8 +36,10 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div onClick={toggleTheme} className="border border-slate-300 dark:border-zinc-700 cursor-pointer duration-200 inline-flex items-center mt-[1px] p-[5px] rounded-md  bg-orange-100 bg-opacity-20 hover:bg-orange-300 dark:bg-purple-100  dark:hover:bg-purple-800 dark:bg-opacity-20">
+    <div>
+      <div onClick={toggleTheme} className="duration-200 border border-slate-300 dark:border-zinc-700 cursor-pointer inline-flex items-center mt-[1px] p-[5px] rounded-md  bg-orange-100 bg-opacity-20 hover:bg-orange-300 dark:bg-purple-100  dark:hover:bg-purple-800 dark:bg-opacity-20">
       <button  className="text-dark dark:text-white text-2xl items-center">{theme==='dark'?<IoSunny/>:<IoMoon/>}</button>
+     </div>
     </div>
   ) : (
     <div />
