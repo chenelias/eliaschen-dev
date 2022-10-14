@@ -36,22 +36,8 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div className="inline-flex items-center p-[1px] rounded-3xl bg-orange-500 dark:bg-purple-700">
-      {themes.map(t => {
-        const checked = t === theme
-        return (
-          <button
-            key={t}
-            className={`${
-              checked ? ' bg-white text-black' : ''
-            }  cursor-pointer rounded-full p-2`}
-            onClick={toggleTheme}
-            aria-label="Toggle theme"
-          >
-            {t === 'light' ? <IoSunny /> : <IoMoon />}
-          </button>
-        )
-      })}
+    <div onClick={toggleTheme} className="border border-slate-300 dark:border-zinc-700 cursor-pointer duration-200 inline-flex items-center mt-[2px] p-[5px] rounded-md  bg-orange-50 bg-opacity-20 hover:bg-orange-300 dark:bg-purple-600  dark:hover:bg-purple-800 dark:bg-opacity-20">
+      <button  className="text-dark dark:text-white text-2xl items-center">{theme==='dark'?<IoSunny/>:<IoMoon/>}</button>
     </div>
   ) : (
     <div />
