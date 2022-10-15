@@ -5,7 +5,7 @@ const TypeTitle = () => {
         <div className="inline-flex">
             <h1 className="m-0">#</h1>
             <Typewriter
-                words={['Develop Tips', 'Front-End Dev', 'Hacking', 'Something New', 'My Works']}
+                words={['Develop Tips', 'Front-End Dev','Tech Tips', 'Hacking', 'Something New', 'My Works']}
                 loop={0}
                 cursor
                 cursorStyle="_"
