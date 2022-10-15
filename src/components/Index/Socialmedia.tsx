@@ -3,7 +3,7 @@ import { BsGithub, BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs/ind
 const Socialmedia = () => {
     return (
         <div>
-            <a target="_blank" className="flex w-[120px]" href="https://github.com/chenelias/">
+            <a target="_blank" className="flex w-[130px]" href="https://github.com/chenelias/">
                 <li className="flex hover:underline hover:underline-offset-8 items-center text-purple-500 font-bold">
                     <BsGithub className="mr-[5px]" />
                     @chenelias

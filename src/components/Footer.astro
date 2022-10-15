@@ -1,13 +1,13 @@
 ---
 const today = new Date()
+import { FaSlackHash } from 'react-icons/fa/index.js'
+import Content from '../components/Content.astro'
 ---
 
-<footer>
+<footer class="my-6 text-center p-3 text-md">
     &copy; {today.getFullYear()} EliasChen. All rights reserved.
+    <!-- <br>
+    <div class="">
+        <a href="/about" class="color-blue-500 text-center text-lg">About</a>
+    </div> -->
 </footer>
-<style>
-    footer {
-        padding: 20px;
-        text-align: center;
-    }
-</style>
