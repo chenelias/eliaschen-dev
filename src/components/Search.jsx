@@ -1,6 +1,4 @@
 import React from "react";
-import {posts} from '../pages/posts.astro'
-// import { Image } from '@astrojs/image/components'
 
 const Search = () => {
   return<div>
