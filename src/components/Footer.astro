@@ -1,11 +1,19 @@
 ---
 const today = new Date()
 import { FaSlackHash } from 'react-icons/fa/index.js'
-import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
 ---
-
-<footer class="my-6 text-center p-3 text-md">
-    &copy; {today.getFullYear()} EliasChen. All rights reserved.
+<footer class="my-4 p-1 text-md">
+    <ContentXL>
+        <div class="text-center">
+            <p class="text-md">&copy; {today.getFullYear()} EliasChen. All rights reserved.</p>
+            <div class="inline-flex text-md">
+                <a class="underline" href="/about" class="" >About</a>
+                <p>&thinsp;|&thinsp;</p>
+                <a class="underline" href="/copyright">CopyRight</a>
+            </div>
+        </div>
+    </ContentXL>
     <!-- <br>
     <div class="">
         <a href="/about" class="color-blue-500 text-center text-lg">About</a>

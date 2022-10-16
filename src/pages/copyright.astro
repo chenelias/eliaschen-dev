@@ -1,0 +1,70 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
+import { FaSlackHash } from 'react-icons/fa/index.js'
+---
+
+<BaseHead title="EliasChen - CopyRight" description="The CopyRight of eliaschen.dev" />
+<Body>
+    <Header />
+    <main class="mt-[50px]">
+        <Content>
+            <div class="mt-[30px] text-center font-bold font-mplus">
+                <h1 class="title-about text-5xl">CopyRight</h1>
+                <p class="text-xl mt-2">of</p>
+                <p class="text-3xl">eliaschen.dev</p>
+            </div>
+            <form action=""></form>
+            <div class="border-2 border-black dark:border-white rounded-lg p-3 mt-5">
+                <h1 class="text-3xl underline font-bold mt-[-5px] mb-2">Contact/Detail</h1>
+                <div class="inline-flex text-xl mt-1">
+                    <p class="font-bold">Controller/Created:</p>&ensp;<p>EliasChen</p>
+                </div><br />
+                <div class="inline-flex text-xl mt-2">
+                    <p class="font-bold">Email:</p>&ensp;<a
+                        class="underline text-blue-600"
+                        href="mailto:eliaschen.dev@gmail.com">eliaschen.dev@gmail.com</a
+                    >
+                </div><br />
+                <div class="inline-flex text-xl items-center mt-2">
+                    <p class="font-bold">Source code:</p>&ensp;<a
+                        target="_blank"
+                        class="underline text-blue-600"
+                        href="https://github.com/chenelias/eliaschen-dev/"
+                        >GitHub Repository
+                    </a>
+                </div><br />
+                <div class="inline-flex text-xl items-center mt-2">
+                    <p class="font-bold">SourceCode license:</p>&ensp;<a
+                        target="_blank"
+                        href="https://github.com/chenelias/eliaschen-dev/blob/main/LICENSE"
+                        ><img src="/license-mit.png" alt="MIT License" title="MIT License" class="h-[40px] w-auto" />
+                    </a>
+                </div><br />
+            </div>
+            <div class="border-2 border-black dark:border-white rounded-lg p-3 mt-5">
+                <h1 class="text-3xl underline font-bold mt-[-5px]">Use</h1>
+                <p class="mt-1">
+                    eliaschen.dev is a personal website for sharing knowledge of ComputerScience,all the documents are
+                    only for education purpose can't be used in commercial.<br />
+                </p>
+            </div>
+            <div class="border-2 border-black dark:border-white rounded-lg p-3 mt-5">
+                <h1 class="text-3xl underline font-bold mt-[-5px]">Share</h1>
+                <p class="mt-1">Any share action must to cite the resource.</p>
+            </div>
+            <div class="border-2 border-black dark:border-white rounded-lg p-3 mt-5">
+                <h1 class="text-3xl underline font-bold mt-[-5px]">infringement report</h1>
+                <p class="mt-1">
+                    If there is any outside resource not be cite in documents please contact me
+                    with email(eliaschen.dev@gmail.com),I will fix it immediately.
+                </p>
+            </div>
+        </Content>
+    </main>
+    <Footer />
+</Body>
