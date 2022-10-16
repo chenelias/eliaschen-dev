@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
+import { FaSlackHash } from 'react-icons/fa/index.js'
+---
+
+<BaseHead title="EliasChen - CopyRight" description="The CopyRight of eliaschen.dev" />
+<Body>
+    <Header />
+    <main class="mt-[50px]">
+        <Content>
+            <div class="mt-[30px] text-center font-bold font-mplus">
+                <h1 class="title-about text-5xl">Privacy Statement</h1>
+            </div>
+            <div class="mt-8">
+                <h1 class="text-3xl font-bold">Cookie</h1>
+                <p class="ml-2">We take your cookie data only usefull on your local machine (theme color).</p>
+            </div>
+        </Content>
+    </main>
+    <Footer />
+</Body>
