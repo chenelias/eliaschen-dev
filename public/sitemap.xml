@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://www.eliaschen.dev/</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/posts</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/posts/pyscript-in-html</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/posts/create-website-with-astro</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works/eliaschendev</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works/burnmd</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/about</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/copyright</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/privacystatement</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works/studyfit</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works/dosometodo</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.eliaschen.dev/works/eliaschenabout</loc>
+  <lastmod>2022-10-16T06:41:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
