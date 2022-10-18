@@ -1,0 +1,31 @@
+---
+import CategoryPosts from '../../layouts/CategoryPosts.astro'
+const posts = (await Astro.glob('../posts/*.mdx'))
+export function getStaticPaths() {
+  const categories = [
+    {
+      id: 'Web',
+      name: 'Web'
+    },
+    {
+      id: 'python',
+      name: 'python'
+    },
+    {
+      id: 'videography',
+      name: 'Videography'
+    }
+  ]
+
+  return categories.map(({ id, name }) => {
+    return {
+      params: { id },
+      props: { name }
+    }
+  })
+}
+
+const { name } = Astro.props
+---
+
+<CategoryPosts category={name} />

@@ -1,0 +1,68 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import { Image } from '@astrojs/image/components'
+import BadgeTag from '../components/BadgeTag.astro'
+export interface Props {
+  category: string
+}
+
+const { category } = Astro.props
+
+const posts = (await Astro.glob('../pages/posts/*.mdx'))
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title="EliasChen - tags" description="tag of posts"/>
+  </head>
+  <Body>
+    <Header title="EliasChen - tags" />
+    <main class="pt-[100px]">
+      <Content>
+        {
+                            posts
+                                .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
+                                .filter(item => item.frontmatter.tag1.includes({category}))
+                                .map((post) => (
+                                    <li class="postlinkbox m-1 list-none">
+                                        <a href={post.frontmatter.url}>
+                                            <Image
+                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                                alt={`${post.frontmatter.title} - EliasChen.dev`}
+                                                src={
+                                                    post.frontmatter.heroImage === undefined
+                                                        ? '../../../public/placeholder-postdefault.jpg'
+                                                        : post.frontmatter.heroImage
+                                                }
+                                                width={720 * 2}
+                                                aspectRatio={1.7}
+                                            />
+                                            <div class=" rounded-b-lg pt-4 px-2 ">
+                                                <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
+                                                    {post.frontmatter.title}
+                                                </h1>
+                                                {post.frontmatter.tag1 && <BadgeTag>{post.frontmatter.tag1}</BadgeTag>}
+                                                {post.frontmatter.tag2 && <BadgeTag>{post.frontmatter.tag2}</BadgeTag>}
+                                                {post.frontmatter.tag3 && <BadgeTag>{post.frontmatter.tag3}</BadgeTag>}
+                                                {post.frontmatter.tag4 && <BadgeTag>{post.frontmatter.tag4}</BadgeTag>}
+                                                {post.frontmatter.tag5 && <BadgeTag>{post.frontmatter.tag5}</BadgeTag>}
+                                                {post.frontmatter.tag6 && <BadgeTag>{post.frontmatter.tag6}</BadgeTag>}
+                                                {post.frontmatter.tag7 && <BadgeTag>{post.frontmatter.tag7}</BadgeTag>}
+                                                {post.frontmatter.tag8 && <BadgeTag>{post.frontmatter.tag8}</BadgeTag>}
+                                                {post.frontmatter.tag9 && <BadgeTag>{post.frontmatter.tag9}</BadgeTag>}
+                                                <p class="text-right">{post.frontmatter.date}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                ))
+                        }
+      </Content>
+      <Footer />
+    </main>
+  </Body>
+</html>

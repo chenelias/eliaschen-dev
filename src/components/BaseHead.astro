@@ -1,15 +1,15 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import '../styles/global.css'
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+    title: string
+    description: string
+    image?: string
 }
 
-const { title, description, image = '/social.png' } = Astro.props;
+const { title, description, image = '/social.png' } = Astro.props
 ---
 
 <!-- Global Metadata -->
@@ -22,6 +22,7 @@ const { title, description, image = '/social.png' } = Astro.props;
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<link rel="shortcut icon" href="/favico.ico" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:image" content={image} />
@@ -38,18 +39,18 @@ const { title, description, image = '/social.png' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 <script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-      return localStorage.getItem('theme')
+    const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme')
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+        return 'light'
+    })()
+    if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+    } else {
+        document.documentElement.classList.add('dark')
     }
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark'
-    }
-    return 'light'
-  })()
-  if (theme === 'light') {
-    document.documentElement.classList.remove('dark')
-  } else {
-    document.documentElement.classList.add('dark')
-  }
 </script>
