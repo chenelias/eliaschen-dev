@@ -1,8 +1,9 @@
 # eliaschen.dev
+### eliaschen - Home
 
 ![image](https://www.eliaschen.dev/github-md.png)
 
-**This is eliaschen.dev , I share some develop & tech things and my works in here.**
+**I share some develop & tech things and my works in here.**
 
 ```
 $ROOT_PROJECT
