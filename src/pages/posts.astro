@@ -38,7 +38,7 @@ const posts = await Astro.glob('./posts/*.mdx')
                                     <li class="postlinkbox m-1">
                                         <a href={post.frontmatter.url}>
                                             <Image
-                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
+                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-25px]"
                                                 alt={`${post.frontmatter.title} - EliasChen.dev`}
                                                 src={
                                                     post.frontmatter.heroImage === undefined
