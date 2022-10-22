@@ -1,8 +1,5 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "postStartCommand": "npm install -g nrm",
-    "postStartCommand": "nrm use taobao",
-    "postStartCommand": "npm install"
-  }
+  "features": {},
+  "postCreateCommand": "npm install ; yarn install ; npm install -g nrm ; nrm use taobao"
 }
