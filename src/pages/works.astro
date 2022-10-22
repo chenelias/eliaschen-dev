@@ -47,7 +47,9 @@ const posts = await Astro.glob('./works/*.mdx')
                                             width={720 * 2}
                                             aspectRatio={1.7}
                                         />}
-                                        {post.frontmatter.heroImage && <img class="duration-200 postlinkbox-image block border border-slate-300 dark:border-zinc-700 rounded-xl" src={
+                                        {post.frontmatter.heroImage && <Image class="duration-200 postlinkbox-image block border border-slate-300 dark:border-zinc-700 rounded-xl"                       width={720 * 2}
+                      aspectRatio={1.7}
+                      alt="Thumbnail" src={
                                     post.frontmatter.heroImage === undefined
                                         ? '/public/placeholder-workdefault.jpg'
                                         : post.frontmatter.heroImage
