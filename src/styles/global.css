@@ -22,7 +22,7 @@ a::selection {
 	background-color: rgba(139, 255, 160, 0.853) !important;
 }
 img::selection{
-	background-color:#75757882 ;
+	background-color:#c6c6c642 ;
 }
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
