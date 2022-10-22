@@ -12,7 +12,7 @@ const posts = (await Astro.glob('../../pages/works/*.mdx'))
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                 .filter((item, index) => index < 2)
                 .map((post) => (
-                    <li class="postlinkbox m-1">
+                    <li class="postlinkbox my-[-5px] mx-1">
                         <a href={post.frontmatter.url}>
                       {post.frontmatter.lightImage &&    
                                         <Image

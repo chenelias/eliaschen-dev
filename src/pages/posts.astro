@@ -35,7 +35,7 @@ const posts = await Astro.glob('./posts/*.mdx')
                                         post.frontmatter.title.toLowerCase().includes('')
                                 )
                                 .map((post) => (
-                                    <li class="postlinkbox m-1">
+                                    <li class="postlinkbox my-[-5px] mx-1">
                                         <a href={post.frontmatter.url}>
                                             <Image
                                                 class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-25px]"
