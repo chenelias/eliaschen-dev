@@ -1,5 +1,14 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {},
-  "postCreateCommand": "npm install ; yarn install ; npm install -g nrm ; nrm use taobao"
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {},
+	"postCreateCommand": "npm install ; yarn install ; npm install -g nrm ; nrm use taobao ; npm install -g git-cz",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"rvest.vs-code-prettier-eslint",
+				"SimonSiefke.prettier-vscode"
+			]
+		}
+	}
 }
