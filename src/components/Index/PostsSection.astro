@@ -6,14 +6,46 @@ const posts = await Astro.glob('../../pages/posts/*.mdx')
 ---
 
 <div>
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 m-1">
+    <ul class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 w-full gap-6 mt-4">
         {
             posts
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
-                .filter((item, index) => index < 2)
+                .filter((item, index) => index < 3)
                 .map((post) => (
-                    <li class="postlinkbox my-[-5px] mx-1">
-                        <a href={post.frontmatter.url}>
+                    <a href={post.frontmatter.url}>
+                        <div class="dark:bg-[#26262bbf] bg-white duration-200 px-2 cursor-pointer postbox border-4 rounded-xl postlinkbox md:!h-[300px]   md:!w-[230px]">
+                            <h1 class="m-1 font-bold text-2xl">{post.frontmatter.title}</h1>
+                            <p class="text-right text-lg font-bold">{post.frontmatter.date}</p>
+                        </div>
+                    </a>
+                ))
+        }
+    </ul>
+</div>
+<style>
+    .postlinkbox:hover .postlinkbox-title {
+        text-decoration: underline;
+    }
+    .postbox {
+        margin-left: 0px !important;
+    }
+    .postbox:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        box-shadow: 0px 0px 25px 0px rgba(201, 201, 201, 0.393);
+    }
+    .postlinkbox:hover .postlinkbox-image {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+</style>
+<!-- <a href={post.frontmatter.url}>
                             <Image
                                 class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-5px]"
                                 alt={`${post.frontmatter.title} - EliasChen.dev`}
@@ -38,21 +70,4 @@ const posts = await Astro.glob('../../pages/posts/*.mdx')
 
                                 <p class="text-right">{post.frontmatter.date}</p>
                             </div>
-                        </a>
-                    </li>
-                ))
-        }
-    </ul>
-</div>
-<style>
-    .postlinkbox:hover .postlinkbox-title {
-        text-decoration: underline;
-    }
-    .postlinkbox:hover .postlinkbox-image {
-        -webkit-transform: scale(1.05);
-        -moz-transform: scale(1.05);
-        -o-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-    }
-</style>
+                        </a> -->

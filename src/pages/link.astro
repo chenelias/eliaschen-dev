@@ -1,0 +1,31 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import { AiOutlineArrow } from '../Printicon'
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <BaseHead title="EliasChen - Links" description="All my profile links to find me on the web" />
+    </head>
+    <Body>
+        <Header title="EliasChen - Link" />
+        <main class="pt-[50px] mb-[50px]">
+            <Content>
+                <h1 class="text-6xl font-extrabold">Links</h1>
+                <p class="text-lg">All my profile links to find me on the web.</p>
+               <div>
+
+               </div>
+            </Content>
+        </main>
+        <Footer />
+    </Body>
+    <style>
+    </style>
+</html>

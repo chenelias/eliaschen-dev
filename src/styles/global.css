@@ -31,25 +31,26 @@ body {
 	overflow-wrap: break-word;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
 	width: 8px;
+	height: 7px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
 	background: transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
 	background-color: #444444;
 	border-radius: 0px;
 	border: none;
 }
 
-body::-webkit-scrollbar-thumb:hover {
+*::-webkit-scrollbar-thumb:hover {
 	background-color: #555555;
 }
 
-body::-webkit-scrollbar-thumb:active {
+*::-webkit-scrollbar-thumb:active {
 	background-color: #666666;
 }
 
