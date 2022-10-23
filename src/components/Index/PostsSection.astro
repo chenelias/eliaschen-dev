@@ -3,6 +3,7 @@ import React from 'react'
 import { Image, Picture } from '@astrojs/image/components'
 import BadgeTag from '../BadgeTag.astro'
 const posts = await Astro.glob('../../pages/posts/*.mdx')
+import { BiTimeFive } from 'react-icons/bi/index.js'
 ---
 
 <div>
@@ -12,10 +13,22 @@ const posts = await Astro.glob('../../pages/posts/*.mdx')
                 .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
                 .filter((item, index) => index < 3)
                 .map((post) => (
-                    <a href={post.frontmatter.url}>
-                        <div class="dark:bg-[#26262bbf] bg-white duration-200 px-2 cursor-pointer postbox border-4 rounded-xl postlinkbox md:!h-[300px]   md:!w-[230px]">
-                            <h1 class="m-1 font-bold text-2xl">{post.frontmatter.title}</h1>
-                            <p class="text-right text-lg font-bold">{post.frontmatter.date}</p>
+                    <a
+                        href={post.frontmatter.url}
+                        class="bg-gradient-to-r from-zinc-400 to-orange-500 w-full p-[6px] rounded-lg shadow-lg shadow-zinc-200/10 hover:shadow-xl hover:scale-[103%] hover:shadow-zinc-200/10 duration-300"
+                    >
+                        <div class="flex flex-col cursor-pointer justify-between gap-4 p-4 bg-zinc-800 rounded-lg h-full">
+                            <div>
+                                <h1 class="text-zinc-300 mb-6 font-bold w-full tracking-tight m-0 text-xl">
+                                    {post.frontmatter.title}
+                                </h1>
+                            </div>
+                            <div class="flex text-zinc-400 gap-2 text-base items-center font-semibold">
+                                <p class="m-0 inline-flex items-center">
+                                    <BiTimeFive />
+                                    {post.frontmatter.date}
+                                </p>
+                            </div>
                         </div>
                     </a>
                 ))
