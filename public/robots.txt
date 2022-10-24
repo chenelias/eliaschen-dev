@@ -1,3 +1,4 @@
-User-agent:*
-Allow:/
-Sitemap:https://www.eliaschen.dev/sitemap-0.xml
+User-agent: Googlebot
+User-agent: *
+Allow: /
+Sitemap: http://www.eliaschen.dev/sitemap-0.xml
