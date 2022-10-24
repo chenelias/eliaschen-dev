@@ -5,25 +5,25 @@ import Socialmedia from './Socialmedia'
 import MediaSharem from '../MediaShare'
 ---
 
-<div class="mx-auto">
-    <div class="nameimgbox flex items-center">
-        <div>
-            <h1 class="mx-auto text-5xl font-bold">EliasChen</h1>
-            <h3 class="text-md ml-1">Developer&ensp;//&ensp;Learner&nbsp;&bull;&nbsp;Taiwan</h3>
+<div class="mx-auto mt-3">
+    
+    <div class="flex flex-col-reverse sm:flex-row items-start">
+        <div class="flex flex-col pr-8">
+            <h1 class="font-bold text-4xl md:text-5xl tracking-tight text-black dark:text-white">Elias Chen</h1><h2
+                class="text-gray-700 dark:text-gray-200 mb-1 mt-[-0.1px]"
+            >
+                Developer&ensp;//&ensp;Learner&nbsp;&bull;&nbsp;Taiwan
+            </h2><p class="text-gray-600 dark:text-gray-400 mb-16">
+               By night a solo developer learning/developing front-end development, by day the learner lives in Taiwan.
+            </p>
+        </div><div class="w-[110px] sm:w-[180px] relative my-[-20px]">
+            <Image src={import('../../media/eliaschen.jpg')} class="w-auto rounded-full grayscale" alt="eliaschen" />
         </div>
-        <div class="flex-1"></div>
-        <Image
-            src={import('../../media/eliaschen.jpg')}
-            class="eliaschenimg h-[140px] w-auto rounded-full grayscale"
-            alt="eliaschen"
-        />
     </div>
     <div class="mt-[20px]">
         <h1 class="text-2xl font-bold font-mplus">About</h1>
         <div class="h-[5px] w-[70px] bg-orange-500 rounded-xl mb-[10px]"></div>
-        <p class="text-lg">
-            &emsp;Elias is a solo developer and learner live in Taiwan.
-        </p>
+        <p class="text-lg">&emsp;Elias is a solo developer and learner live in Taiwan.</p>
     </div>
     <div class="mt-[20px]">
         <h1 class="text-2xl font-bold font-mplus">Develop skills</h1>

@@ -6,6 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import ContentXL from '../components/ContentXL.astro'
 import { AiOutlineArrow } from '../Printicon'
+import { linksdata } from '../components/data/linksdata'
 ---
 
 <!DOCTYPE html>
@@ -19,13 +20,19 @@ import { AiOutlineArrow } from '../Printicon'
             <ContentXL>
                 <h1 class="text-6xl font-extrabold">Links</h1>
                 <p class="text-lg">All my profile links to find me on the web.</p>
-               <div class="mt-10 bg-slate-500">
-                    
-               </div>
+                <div class="mt-10 dark:bg-[#222] bg-slate-300 p-3 rounded-lg">
+                    {
+                        linksdata.map((links) => (
+                            <a href={links.url} target="_blank" class="dark:bg-zinc-900 flex bg-[#e2e8f0] rounded-lg shadow-lg shodow-black-/5 cursor-pointer dark:shadow-zinc-200/5 pl-3 items-center my-3 p-1">
+                                <h1 class="font-bold !m-0">{links.name}</h1>
+                            </a>
+                        ))
+                    }
+                </div>
             </ContentXL>
         </main>
         <Footer />
     </Body>
-    <style>
-    </style>
+    <style></style>
+
 </html>
