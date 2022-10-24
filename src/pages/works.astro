@@ -18,12 +18,14 @@ const posts = await Astro.glob('./works/*.mdx')
     </head>
     <Body>
         <Header title={SITE_TITLE} />
-        <main class="pt-[100px]">
+        <main class="pt-[60px]">
             <ContentXL>
                 <div>
-                    <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                    <h1 class="font-extrabold text-6xl">Works</h1>
+                    <p class="ml-1 text-lg">My works on <a target="_blank" href="https://github.com/chenelias/" class="underline">Github</a>&thinsp;/&thinsp;Other</p>
+                    <!-- <h1 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                         <TypeWorks client:visible />
-                    </h1>
+                    </h1> -->
                 </div>
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-10">
                     {

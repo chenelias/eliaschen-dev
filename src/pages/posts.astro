@@ -12,15 +12,17 @@ import Search from '../components/Search.jsx'
 const posts = await Astro.glob('./posts/*.mdx')
 
 ---
-<BaseHead title="EliasChen - Posts" description="Share something around of Develop with posts" />
+<BaseHead title="EliasChen - Posts" description="Share some posts about Develop on here/DEV Community" />
 <Body>
     <Header title="EliasChen - Posts" />
-    <main class="pt-[100px]">
+    <main class="pt-[60px]">
         <ContentXL>
             <div>
-                <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                <!-- <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
                     <TypePosts client:visible />
-                </h3>
+                </h3> -->
+                <h1 class="font-extrabold text-6xl">Posts</h1>
+                <p class="text-lg ml-1">Share some posts about Develop on <a href="/" class="underline">EliasChen.dev</a>&thinsp;/&thinsp;<a href="https://dev.to/" target="_blank" class="underline">DEV Community</a></p>
                 <!-- <div class="text-center mt-5">
                     <Search client:load />
                 </div> -->

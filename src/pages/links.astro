@@ -4,7 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
-import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
 import { AiOutlineArrow } from '../Printicon'
 ---
 
@@ -15,14 +15,14 @@ import { AiOutlineArrow } from '../Printicon'
     </head>
     <Body>
         <Header title="EliasChen - Link" />
-        <main class="pt-[50px] mb-[50px]">
-            <Content>
+        <main class="pt-[60px] mb-[50px]">
+            <ContentXL>
                 <h1 class="text-6xl font-extrabold">Links</h1>
                 <p class="text-lg">All my profile links to find me on the web.</p>
-               <div>
+               <div class="mt-10 bg-slate-500">
                     
                </div>
-            </Content>
+            </ContentXL>
         </main>
         <Footer />
     </Body>

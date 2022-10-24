@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import TypeTitle from '../components/Index/TypeTitle'
 import About from '../components/Index/Aubot.astro'
-import Content from '../components/Content.astro'
+import ContentLL from '../components/ContentLL.astro'
 import PostsSection from '../components/Index/PostsSection.astro'
 import WorksSecton from '../components/Index/WorksSection.astro'
 import ContentXL from '../components/ContentXL.astro'
@@ -20,17 +20,17 @@ import { AiOutlineArrow } from '../Printicon'
     </head>
     <Body>
         <Header title={SITE_TITLE} />
-        <main class="pt-[70px]">
-            <div class="mt-20 mx-auto text-center mb-20">
+        <main class="pt-[100px]">
+            <!-- <div class="mt-20 mx-auto text-center mb-20">
                 <h1 class="welcome text-md font-thin ">WELCOME TO ELIASCHEN.DEV</h1>
-                <h1 class="text-3xl font-mplus ishareabout">I Share about</h1>
+                <h1 class="text-3xl font-mplus ishareabout">For</h1>
                 <h1 class="typetitle text-5xl text-center font-mplus font-bold text-orange-400">
                     <TypeTitle client:visible />
                 </h1>
-            </div>
-            <Content>
+            </div> -->
+            <ContentLL>
                 <About />
-            </Content>
+            </ContentLL>
             <ContentXL>
                 <div class="mt-[30px]">
                     <section class="postsdiv">
@@ -64,15 +64,15 @@ import { AiOutlineArrow } from '../Printicon'
         <Footer />
     </Body>
     <style>
-        .typetitle{
-            margin: 0px!important;
-            display: inline-block
+        .typetitle {
+            margin: 0px !important;
+            display: inline-block;
         }
-        .welcome{
-            margin: 0px!important;
+        .welcome {
+            margin: 0px !important;
         }
-        .ishareabout{
-            margin: 0px!important;
+        .ishareabout {
+            margin: 0px !important;
         }
         @media only screen and (max-width: 440px) {
             .typetitle {
