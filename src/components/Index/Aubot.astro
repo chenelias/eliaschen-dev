@@ -5,8 +5,7 @@ import Socialmedia from './Socialmedia'
 import MediaSharem from '../MediaShare'
 ---
 
-<div class="mx-auto mt-3">
-    
+<div class="mx-auto mt-5">
     <div class="flex flex-col-reverse sm:flex-row items-start">
         <div class="flex flex-col pr-8">
             <h1 class="font-bold text-4xl md:text-5xl tracking-tight text-black dark:text-white">Elias Chen</h1><h2
@@ -20,41 +19,14 @@ import MediaSharem from '../MediaShare'
             <Image src={import('../../media/eliaschen.jpg')} class="w-auto rounded-full grayscale" alt="eliaschen" />
         </div>
     </div>
-    <div class="mt-[20px]">
-        <h1 class="text-2xl font-bold font-mplus">About</h1>
-        <div class="h-[5px] w-[70px] bg-orange-500 rounded-xl mb-[10px]"></div>
-        <p class="text-lg">&emsp;Elias is a solo developer and learner live in Taiwan.</p>
-    </div>
-    <div class="mt-[20px]">
-        <h1 class="text-2xl font-bold font-mplus">Develop skills</h1>
-        <div class="h-[5px] w-[160px] bg-orange-500 rounded-xl mb-[10px]"></div>
+    <div class="mt-[-40px]">
+        <h1 class="text-3xl font-bold mb-1">Develop skills</h1>
         <p class="text-md">
             &emsp;Web ( React / Next / Astro / Vue ), Mobile (ReactNative), Desktop (Electron), Python, C++
         </p>
     </div>
     <div class="mt-[20px]">
-        <h1 class="text-2xl font-bold font-mplus">Hobby</h1>
-        <div class="h-[5px] w-[75px] bg-orange-500 rounded-xl mb-[10px]"></div>
+        <h1 class="text-3xl font-bold mb-1">Hobby</h1>
         <p class="text-md">&emsp;Develop, Art, Photography, English</p>
     </div>
-    <!-- <div class="mt-[20px]">
-            <h1 class="text-2xl font-bold font-mplus">Social media</h1> 
-            <div class="h-[5px] w-[149px] bg-orange-500 rounded-xl mb-[10px]"></div>
-        <div class="ml-5">
-            <lu class="list-none text-lg leading-10">
-                <Socialmedia client:visible />
-            </lu>
-        </div>
-    </div> -->
 </div>
-<style>
-    @media only screen and (max-width: 430px) {
-        .nameimgbox {
-            display: block;
-        }
-        .eliaschenimg {
-            margin-top: 5px;
-            height: 150px;
-        }
-    }
-</style>

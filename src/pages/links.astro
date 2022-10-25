@@ -5,8 +5,10 @@ import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
 import Body from '../components/Body.astro'
 import ContentXL from '../components/ContentXL.astro'
+import ContentDiv from '../components/ContentDiv.astro'
 import { AiOutlineArrow } from '../Printicon'
 import { linksdata } from '../components/data/linksdata'
+import { Icon } from 'astro-icon'
 ---
 
 <!DOCTYPE html>
@@ -20,19 +22,34 @@ import { linksdata } from '../components/data/linksdata'
             <ContentXL>
                 <h1 class="text-6xl font-extrabold">Links</h1>
                 <p class="text-lg">All my profile links to find me on the web.</p>
-                <div class="mt-10 dark:bg-[#222] bg-slate-300 p-3 rounded-lg">
-                    {
-                        linksdata.map((links) => (
-                            <a href={links.url} target="_blank" class="dark:bg-zinc-900 flex bg-[#e2e8f0] rounded-lg shadow-lg shodow-black-/5 cursor-pointer dark:shadow-zinc-200/5 pl-3 items-center my-3 p-1">
-                                <h1 class="font-bold !m-0">{links.name}</h1>
-                            </a>
-                        ))
-                    }
-                </div>
+                <ContentDiv>
+                    <div class="mt-8">
+                        {
+                            linksdata.map((links) => (
+                                <a
+                                    href={links.url}
+                                    target="_blank"
+                                    class="dark:bg-[#1d1d20] hover:-translate-y-1 duration-150 flex bg-[#e2e8f0] rounded-lg shadow-lg cursor-pointer  pl-3 items-center my-4 p-1"
+                                >
+                                    <p class="font-bold !m-0">{links.name}</p>
+                                    <p class="text-[#797979]">//</p>
+                                    <p>
+                                        @<span class="font-code">{links.username}</span>
+                                    </p>
+                                    <div class="flex-1" />
+                                    <div class="pr-1">
+                                        <Icon size="23" name={links.icon} />
+                                    </div>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </ContentDiv>
             </ContentXL>
         </main>
         <Footer />
     </Body>
     <style></style>
+
 
 </html>

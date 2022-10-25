@@ -1,26 +1,34 @@
 // icon import
-import React from 'react';
-import { BsGithub, BsFacebook, BsInstagram } from 'react-icons/bs/index.js'
-import { FaDev } from 'react-icons/fa/index.js'
+import React from 'react'
 export const linksdata = [
     {
         name: 'Github',
-        url: 'https://github.com/chenelias',
-        icon: <BsGithub />,
+        username: 'chenelias',
+        url: 'https://github.com/chenelias/',
+        icon: 'fa-brands:dev',
     },
     {
         name: 'DEV Community',
-        url: '#',
-        icon: <FaDev />,
+        username: 'eliaschen',
+        url: 'https://dev.to/',
+        icon: 'bi:github',
+    },
+    {
+        name: 'Twitter',
+        username: 'chenelias5',
+        url: 'https://twitter.com/chenelias5',
+        icon: 'bi:twitter',
     },
     {
         name: 'Facebook',
+        username: 'EliasChen',
         url: 'https://www.facebook.com/people/Elias-Chen/100074943037854/',
-        icon: <BsFacebook />,
+        icon: 'bi:facebook',
     },
     {
         name: 'Instagram',
+        username: 'EliasChen',
         url: 'https://www.instagram.com/codechen9810/',
-        icon: <BsInstagram />,
+        icon: 'bi:instagram',
     },
 ]
