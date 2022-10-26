@@ -3,9 +3,25 @@ const today = new Date()
 import { FaSlackHash } from 'react-icons/fa/index.js'
 import ContentXL from '../components/ContentXL.astro'
 ---
-<footer class="my-8 p-1 text-md">
+
+<!-- my-8 p-1 text-md -->
+<footer class="mt-10">
     <ContentXL>
-        <div class="text-center">
+        <div class="my-8 xs:flex block max-w-full">
+            <p class="text-md">&copy;&ensp;{new Date().getFullYear()}&thinsp;EliasChen.&thinsp;All rights reserved.</p>
+            <div class="flex-1"></div>
+            <ul class="text-md">
+                <a class="mx-1 text-gray-500 hover:text-gray-700 transition" href="/copyright">CopyRight</a>
+                <a class="mx-1 text-gray-500 hover:text-gray-700 transition" href="/about">About</a>
+                <a
+                    class="mx-1 text-gray-500 hover:text-gray-700 transition"
+                    href="https://github.com/chenelias/eliaschen-dev"
+                    target="_blank">Source</a
+                >
+            </ul>
+        </div>
+    </ContentXL>
+    <!-- <div class="text-center">
             <p class="text-md">&copy; {today.getFullYear()} EliasChen. All rights reserved.</p>
             <div class="inline-flex text-xs">
                 <a class="underline" href="/about" class="" >About</a>
@@ -14,6 +30,5 @@ import ContentXL from '../components/ContentXL.astro'
                 <p>&thinsp;|&thinsp;</p>
                 <a class="underline" href="/privacystatement">PrivacyStatement</a>
             </div>
-        </div>
-    </ContentXL>
+        </div> -->
 </footer>

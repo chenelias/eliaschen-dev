@@ -17,12 +17,12 @@ export default defineConfig({
             [
                 addClasses,
                 {
-                    h1: 'text-6xl font-bold font-mplus',
-                    h2: 'text-4xl font-bold font-mplus',
-                    h3: 'text-2xl font-bold font-mplus',
-                    h4: 'text-xl font-bold font-mplus',
-                    h5: 'text-lg font-bold font-mplus',
-                    h6: 'text-md font-bold font-mplus',
+                    h1: 'text-6xl font-bold',
+                    h2: 'text-4xl font-bold',
+                    h3: 'text-2xl font-bold',
+                    h4: 'text-xl font-bold ',
+                    h5: 'text-lg font-bold ',
+                    h6: 'text-md font-bold ',
                     img: 'border border-slate-300 dark:border-zinc-700 rounded-xl mb-6 ',
                     a: 'underline underline-offset-2 hover:text-orange-500 decoration-orange-500',
                 },

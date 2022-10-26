@@ -2,7 +2,7 @@ import React from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { IoMenu } from 'react-icons/io5/index.js'
 import DropdownMenuItem from './DropdownMenuItem'
-
+import { NavLinks } from '../data/NavLink'
 const DropdownMenu = () => {
     return (
         <Menu as="div" className="text-left inline-block relative mr-3">
@@ -26,14 +26,9 @@ const DropdownMenu = () => {
                     <div className="py-1 ">
                         <div className="px-3 py-1 uppercase font-bold text-xs">Navigation</div>
                     </div>
-                    <DropdownMenuItem href="/posts">Posts</DropdownMenuItem>
-                    <DropdownMenuItem href="/works">Works</DropdownMenuItem>
-                    <DropdownMenuItem href="/links">Links</DropdownMenuItem>
-                    <DropdownMenuItem href="https://github.com/chenelias/eliaschen-dev">
-                        <a className="no-underline" href="https://github.com/chenelias/eliaschen-dev" target="_blank">
-                            Source
-                        </a>
-                    </DropdownMenuItem>
+                    {NavLinks.map((links) => (
+                        <DropdownMenuItem href={links.url}>{links.title}</DropdownMenuItem>
+                    ))}
                 </Menu.Items>
             </Transition>
         </Menu>

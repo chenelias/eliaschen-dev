@@ -66,6 +66,11 @@
     "@algolia/requester-common" "4.14.2"
     "@algolia/transporter" "4.14.2"
 
+"@algolia/events@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.npmmirror.com/@algolia/events/-/events-4.0.1.tgz#fd39e7477e7bc703d7f893b556f676c032af3950"
+  integrity sha512-FQzvOCgoFXAbf5Y6mYozw2aj5KCJoA3m4heImceldzPSMbdyS4atVjJzXKMsfX3wnZTFYwkkt8/z8UesLHlSBQ==
+
 "@algolia/logger-common@4.14.2":
   version "4.14.2"
   resolved "https://registry.npmjs.org/@algolia/logger-common/-/logger-common-4.14.2.tgz"
@@ -1321,6 +1326,13 @@
   integrity sha512-j2vJGnkopRzH+ykJ8h68wrHnEUmtK//E723jjixiAl/PPf6FhqY/vYRcMVlNydRKQjQsTsYEjpx+DZMIvnGk/g==
   dependencies:
     core-js-pure "^3.25.1"
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.1.2":
+  version "7.19.4"
+  resolved "https://registry.npmmirror.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
+  integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
+  dependencies:
     regenerator-runtime "^0.13.4"
 
 "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.18.9", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
@@ -3098,7 +3110,14 @@ ajv@^8.0.0, ajv@^8.11.0, ajv@^8.6.0, ajv@^8.8.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch@^4.14.2:
+algoliasearch-helper@^3.11.1:
+  version "3.11.1"
+  resolved "https://registry.npmmirror.com/algoliasearch-helper/-/algoliasearch-helper-3.11.1.tgz#d83ab7f1a2a374440686ef7a144b3c288b01188a"
+  integrity sha512-mvsPN3eK4E0bZG0/WlWJjeqe/bUD2KOEVOl0GyL/TGXn6wcpZU8NOuztGHCUKXkyg5gq6YzUakVTmnmSSO5Yiw==
+  dependencies:
+    "@algolia/events" "^4.0.1"
+
+"algoliasearch@>= 3.27.1 < 5", algoliasearch@^4.14.2:
   version "4.14.2"
   resolved "https://registry.npmjs.org/algoliasearch/-/algoliasearch-4.14.2.tgz"
   integrity sha512-ngbEQonGEmf8dyEh5f+uOIihv4176dgbuOZspiuhmTTBRBuzWu3KCGHre6uHj5YyuC7pNvQGzB6ZNJyZi0z+Sg==
@@ -10409,10 +10428,56 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmmirror.com/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
+react-fast-compare@^3.0.0:
+  version "3.2.0"
+  resolved "https://registry.npmmirror.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
 react-icons@^4.4.0:
   version "4.4.0"
   resolved "https://registry.npmmirror.com/react-icons/-/react-icons-4.4.0.tgz"
   integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
+
+react-instantsearch-core@6.38.0:
+  version "6.38.0"
+  resolved "https://registry.npmmirror.com/react-instantsearch-core/-/react-instantsearch-core-6.38.0.tgz#5a0f9f52dd37f27449ee138f8d9a43dba5d582ff"
+  integrity sha512-Y5denvptL+qDOHY3LxipULNun8f3t2WeO9UdiWJd9FER1vn1VBrDdSyZ5b+idxqVWhSeVbncbf98zr7EW/kFvA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "^3.11.1"
+    prop-types "^15.6.2"
+    react-fast-compare "^3.0.0"
+
+react-instantsearch-dom@6.38.0, react-instantsearch-dom@^6.38.0:
+  version "6.38.0"
+  resolved "https://registry.npmmirror.com/react-instantsearch-dom/-/react-instantsearch-dom-6.38.0.tgz#9f17aacb81ee22e7cd85ba867bf99affded501f0"
+  integrity sha512-yE0y9U1GCPZ/Jqzbd2BHTdx83/DYIEbXqAt7a+a5TLi4qQgwjTpVrtAkqzhT8f1/TRhNqu0wYAT4HFixVsW8FA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch-helper "^3.11.1"
+    classnames "^2.2.5"
+    prop-types "^15.6.2"
+    react-fast-compare "^3.0.0"
+    react-instantsearch-core "6.38.0"
+
+react-instantsearch-native@6.38.0:
+  version "6.38.0"
+  resolved "https://registry.npmmirror.com/react-instantsearch-native/-/react-instantsearch-native-6.38.0.tgz#991ba8877d6ea8f160a179963156baf1387ceeed"
+  integrity sha512-BDZo+ZIJS21oGZ7aaK0nmS3ybP6IZE1ibEqXKX7wIEQ2UpapEDGBnv4DMSXxBuvj4yaJFmfp9yfExJyahp2hnQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    algoliasearch ">= 3.27.1 < 5"
+    react-instantsearch-core "6.38.0"
+
+react-instantsearch@^6.38.0:
+  version "6.38.0"
+  resolved "https://registry.npmmirror.com/react-instantsearch/-/react-instantsearch-6.38.0.tgz#949c10761cf3828350107679e900f5909f8cf31a"
+  integrity sha512-1qSaGlqCAMPmWdU59MK7brth0DJ053zkSKrRU0mE7bZuHcgAsQamckZtOJmka5trC04LZduxvX+Y6wcAocLjjQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    react-instantsearch-core "6.38.0"
+    react-instantsearch-dom "6.38.0"
+    react-instantsearch-native "6.38.0"
 
 react-is@^16.13.1, react-is@^16.7.0, "react-is@^16.8.0 || ^17.0.0":
   version "16.13.1"

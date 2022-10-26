@@ -5,6 +5,7 @@ import ThemeToggle from './Header/ThemeToggleButton'
 import DropdownMenu from './Header/DropdownMenu'
 import Logoicon, { Githubicon } from './Header/Logoicon'
 import ContentXL from './ContentXL.astro'
+import { NavLinks } from '../components/data/NavLink'
 ---
 
 <header class="fixed w-full pq2 z-20 dark:bg-[rgba(17, 17, 17,0.29)] bg-[rgba(249, 250, 251,0.30)] backdrop-blur-md">
@@ -22,14 +23,13 @@ import ContentXL from './ContentXL.astro'
                 </h2>
             </a>
             <div class="headerlink text-lg items-center gap-6">
-                <HeaderLink class="hover:underline hover:underline-offset-8 mr-2" href="/posts">Posts</HeaderLink>
-                <HeaderLink class="hover:underline hover:underline-offset-8 mx-2" href="/works">Works</HeaderLink>
-                <HeaderLink class="hover:underline hover:underline-offset-8 mx-2" href="/links">Links</HeaderLink>
-                <HeaderLink
-                    class="hover:underline hover:underline-offset-8 mx-2 relative top-[2.5px]"
-                    href="https://github.com/chenelias/eliaschen-dev"
-                    target="_blank"><Githubicon />Source</HeaderLink
-                >
+                {
+                    NavLinks.map((links) => (
+                        <HeaderLink class="hover:underline hover:underline-offset-8 mx-2" href={links.url}>
+                            {links.title}
+                        </HeaderLink>
+                    ))
+                }
             </div>
             <div class="flex-1"></div>
             <div class="themetoggle"><ThemeToggle client:load /></div>

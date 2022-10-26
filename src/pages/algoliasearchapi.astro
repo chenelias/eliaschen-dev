@@ -1,0 +1,31 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import ContentXL from '../components/ContentXL.astro'
+const posts = await Astro.glob('./works/*.mdx')
+---
+
+<BaseHead title="EliasChen - algoliasearchapi" description="About this website eliaschen.dev" />
+<Body>
+    <Header />
+    <main class="mt-[50px]">
+        <ContentXL>
+            <div class="mt-[30px]">
+                {
+                    posts
+                        .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
+                        .filter(
+                            (post) =>
+                                post.frontmatter.title.toUpperCase().includes('') ||
+                                post.frontmatter.title.toLowerCase().includes('')
+                        )
+                        .map((post) => <div>{post.frontmatter.title}</div>)
+                }
+            </div>
+        </ContentXL>
+    </main>
+    <Footer />
+</Body>

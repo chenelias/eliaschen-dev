@@ -1,0 +1,155 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION, HOMEPAGE_URL } from '../config'
+import Body from '../components/Body.astro'
+import ContentXL from '../components/ContentXL.astro'
+import TypePosts from '../components/Typing/TypePosts'
+import BadgeTag from '../components/BadgeTag.astro'
+import { Image } from '@astrojs/image/components'
+import Search from '../components/Search.jsx'
+const posts = await Astro.glob('./posts/*.mdx')
+import { BiTimeFive } from 'react-icons/bi/index.js'
+import { AiOutlineTags } from 'react-icons/ai/index.js'
+// import {
+//     InstantSearch,
+//     Hits,
+//     SearchBox,
+//     Pagination,
+//     Highlight,
+//     ClearRefinements,
+//     RefinementList,
+//     Configure,
+// } from 'react-instantsearch-dom'
+---
+
+<BaseHead title="EliasChen - Blog" description="Share some posts about Develop on here/DEV Community" />
+<Body>
+    <Header title="EliasChen - Blog" />
+    <main class="pt-[60px]">
+        <ContentXL>
+            <div>
+                <!-- <h3 class="text-5xl text-center font-mplus font-bold text-orange-400 dark:text-purple-500">
+                    <TypePosts client:visible />
+                </h3> -->
+                <h1 class="font-extrabold mb-2 text-6xl">Blog</h1>
+                <p class="text-lg ml-1">
+                    Share some posts about Develop on <a href="/" class="underline">EliasChen.dev</a>&thinsp;/&thinsp;<a
+                        href="https://dev.to/"
+                        target="_blank"
+                        class="underline">DEV Community</a
+                    >
+                </p>
+                <!-- <div class="text-center mt-5">
+                    <Search client:load />
+                </div> -->
+                <input
+                    type="text"
+                    placeholder="Search Posts"
+                    class="mt-2 input-search inline-flex justify-center rounded-md border-2 border-zinc-400 p-2 text-xl font-medium"
+                />
+                <!-- <InstantSearch
+                    apiKey="cdfd0101787c27d7c9306283ea2c902f"
+                    appId="eliaschen.dev"
+                    indexName="article_search"
+                >
+
+                    <SearchBox />
+                </InstantSearch> -->
+                <div>
+                    <ul class="mt-5">
+                        {
+                            posts
+                                .sort((a, b) => (a.frontmatter.fortime < b.frontmatter.fortime ? 1 : -1))
+                                .filter(
+                                    (post) =>
+                                        post.frontmatter.title.toUpperCase().includes('') ||
+                                        post.frontmatter.title.toLowerCase().includes('')
+                                )
+                                .map((post) => (
+                                    <li class="hover:bg-zinc-300 dark:hover:bg-zinc-700 transition rounded-lg my-3 flex flex-col cursor-pointer justify-between gap-4 p-4 w-full h-full">
+                                        <a href={post.frontmatter.url}>
+                                            <div class="flex">
+                                                <div class="block mr-4">
+                                                    <h1 class="!mt-0 font-bold text-2xl ">{post.frontmatter.title}</h1>
+                                                    <p class="inline-flex items-center text-md font-bold">
+                                                        <BiTimeFive />
+                                                        {post.frontmatter.date}
+                                                    </p>
+                                                    <p class="inline-flex items-center text-md font-bold mt-5">
+                                                        <AiOutlineTags />
+                                                        {post.frontmatter.tag1}
+                                                    </p>
+                                                </div>
+
+                                                <div class="flex-1" />
+                                                <Image
+                                                    class="md:flex hidden border border-slate-300 dark:border-zinc-700 rounded-lg"
+                                                    alt={`${post.frontmatter.title} - EliasChen.dev`}
+                                                    src={
+                                                        post.frontmatter.heroImage === undefined
+                                                            ? '../../../public/placeholder-postdefault.jpg'
+                                                            : post.frontmatter.heroImage
+                                                    }
+                                                    width={170}
+                                                    aspectRatio={1.5}
+                                                />
+                                            </div>
+                                        </a>
+                                    </li>
+                                ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </ContentXL>
+    </main>
+    <Footer />
+</Body>
+<style>
+    .postlinkbox:hover .postlinkbox-title {
+        text-decoration: underline;
+    }
+    .postlinkbox:hover .postlinkbox-image {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    .input-search {
+        width: 260px;
+    }
+    @media only screen and (min-width: 650px) {
+        .input-search {
+            width: 600px;
+        }
+    }
+</style>
+<!-- <Image
+                                                class="postlinkbox-image duration-200 border border-slate-300 dark:border-zinc-700 rounded-xl mb-[-25px]"
+                                                alt={`${post.frontmatter.title} - EliasChen.dev`}
+                                                src={
+                                                    post.frontmatter.heroImage === undefined
+                                                        ? '../../../public/placeholder-postdefault.jpg'
+                                                        : post.frontmatter.heroImage
+                                                }
+                                                width={720 * 2}
+                                                aspectRatio={1.7}
+                                            />
+                                            <div class=" rounded-b-lg pt-4 px-2 ">
+                                                <h1 class="postlinkbox-title text-2xl font-mplus font-bold ">
+                                                    {post.frontmatter.title}
+                                                </h1>
+                                                {post.frontmatter.tag1 && <BadgeTag>{post.frontmatter.tag1}</BadgeTag>}
+                                                {post.frontmatter.tag2 && <BadgeTag>{post.frontmatter.tag2}</BadgeTag>}
+                                                {post.frontmatter.tag3 && <BadgeTag>{post.frontmatter.tag3}</BadgeTag>}
+                                                {post.frontmatter.tag4 && <BadgeTag>{post.frontmatter.tag4}</BadgeTag>}
+                                                {post.frontmatter.tag5 && <BadgeTag>{post.frontmatter.tag5}</BadgeTag>}
+                                                {post.frontmatter.tag6 && <BadgeTag>{post.frontmatter.tag6}</BadgeTag>}
+                                                {post.frontmatter.tag7 && <BadgeTag>{post.frontmatter.tag7}</BadgeTag>}
+                                                {post.frontmatter.tag8 && <BadgeTag>{post.frontmatter.tag8}</BadgeTag>}
+                                                {post.frontmatter.tag9 && <BadgeTag>{post.frontmatter.tag9}</BadgeTag>}
+                                                <p class="text-right">{post.frontmatter.date}</p>
+                                            </div> -->

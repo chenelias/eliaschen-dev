@@ -5,13 +5,13 @@ export const linksdata = [
         name: 'Github',
         username: 'chenelias',
         url: 'https://github.com/chenelias/',
-        icon: 'fa-brands:dev',
+        icon: 'bi:github',
     },
     {
         name: 'DEV Community',
         username: 'eliaschen',
         url: 'https://dev.to/',
-        icon: 'bi:github',
+        icon: 'fa-brands:dev',
     },
     {
         name: 'Twitter',

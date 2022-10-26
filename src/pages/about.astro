@@ -5,22 +5,71 @@ import Footer from '../components/Footer.astro'
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
 import ContentXL from '../components/ContentXL.astro'
+import { Image } from '@astrojs/image/components'
 import { FaSlackHash } from 'react-icons/fa/index.js'
 ---
 
 <BaseHead title="EliasChen - About" description="About this website eliaschen.dev" />
 <Body>
-    <Header/>
+    <Header />
     <main class="mt-[50px]">
-        <Content>
+        <ContentXL>
             <div class="mt-[30px]">
-                <h1 class="title-about text-6xl font-extrabold flex">About</h1>
+                <h1 class="title-about text-6xl font-bold flex">About Me</h1>
             </div>
             <p class="text-lg m-3 mt-5 ml-5">
-                eliaschen.dev is a website I share something abput develop & Technology to help more people learn develop skills , I also share my works from <a href="https://github.com/chenelias" target="_blank" class="underline underline-offset-6 decoration-orange-400 duration-200 hover:text-orange-500 font-bold">github</a> , hope you like it.
+                eliaschen.dev is a website I share something abput develop & Technology to help more people learn
+                develop skills , I also share my works from <a
+                    href="https://github.com/chenelias"
+                    target="_blank"
+                    class="underline underline-offset-6 decoration-orange-400 duration-200 hover:text-orange-500 font-bold"
+                    >github</a
+                > , hope you like it.
             </p>
-            <p class="float-right text-lg font-mplus font-bold">-&ensp;EliasChen</p>
-        </Content>
+            <h1 class="text-3xl font-bold">Photoshots</h1>
+            <div class="inline-flex overflow-auto rounded-lg">
+                <Image
+                    src={import('../media/eliaschen.jpg')}
+                    class="w-auto h-[250px] rounded-xl grayscale border-1 "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/cat3.jpg')}
+                    class="w-auto h-[250px] rounded-xl grayscale border-1 "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/cat1.jpg')}
+                    class="w-auto h-[250px] rounded-xl grayscale border-1 "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/cat2.jpg')}
+                    class="w-auto h-[250px] rounded-xl grayscale border-1 "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/beach.jpg')}
+                    class="w-auto h-[250px] rounded-xl grayscale"
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/dragon.jpg')}
+                    class="w-auto h-[250px] grayscale rounded-xl "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/mountain.jpg')}
+                    class="w-auto h-[250px] grayscale rounded-xl "
+                    alt="eliaschen"
+                />&emsp;
+                <Image
+                    src={import('../media/street.png')}
+                    class="w-auto h-[250px] grayscale rounded-xl "
+                    alt="eliaschen"
+                />&emsp;
+            </div>
+        </ContentXL>
     </main>
     <Footer />
 </Body>
