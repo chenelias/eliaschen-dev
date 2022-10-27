@@ -6,11 +6,12 @@ import tailwind from '@astrojs/tailwind'
 import addClasses from 'rehype-add-classes'
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
+import robotsTxt from 'astro-robots-txt'
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://eliaschen.dev/',
-    integrations: [sitemap(), react(), image(), tailwind(), mdx(), preact()],
+    site: 'https://www.eliaschen.dev/',
+    integrations: [sitemap(), react(), image(), tailwind(), mdx(), preact(), robotsTxt()],
     markdown: {
         extendDefaultPlugins: true,
         rehypePlugins: [
