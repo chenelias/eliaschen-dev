@@ -7,12 +7,11 @@ import Content from '../components/Content.astro'
 import ContentXL from '../components/ContentXL.astro'
 import { Image } from '@astrojs/image/components'
 import { FaSlackHash } from 'react-icons/fa/index.js'
-import LazyImage from 'react-lazy-blur-image'
 ---
 
 <BaseHead title="EliasChen - About" description="About this website eliaschen.dev" />
 <Body>
-    <Header />
+    <Header title="EliasChen - About" />
     <main class="mt-[50px]">
         <ContentXL>
             <div class="mt-[30px]">
@@ -20,48 +19,49 @@ import LazyImage from 'react-lazy-blur-image'
             </div>
             <p class="font-bold text-xl">Short, 3rd Person</p>
             <p class="text-lg m-3 ml-5">
-               EliasChen is a solo developer and loves coding、photography, for now he still keep learning about fullstack development and python programming.
+                EliasChen is a solo developer and loves coding、photography, for now he still keep learning about
+                fullstack development and python programming.
             </p>
             <h1 class="text-3xl font-bold">Photoshots</h1>
             <div class="inline-flex overflow-auto rounded-lg">
                 <Image
                     src={import('../media/eliaschen.jpg')}
-                    class="w-auto h-[250px] rounded-xl grayscale border-1"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/cat3.jpg')}
-                    class="w-auto h-[250px] rounded-xl grayscale border-1"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/cat1.jpg')}
-                    class="w-auto h-[250px] rounded-xl grayscale border-1"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/cat2.jpg')}
-                    class="w-auto h-[250px] rounded-xl grayscale border-1"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/beach.jpg')}
-                    class="w-auto h-[250px] rounded-xl grayscale"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/dragon.jpg')}
-                    class="w-auto h-[250px] grayscale rounded-xl"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/mountain.jpg')}
-                    class="w-auto h-[250px] grayscale rounded-xl"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
                 <Image
                     src={import('../media/street.png')}
-                    class="w-auto h-[250px] grayscale rounded-xl"
+                    class="w-auto h-[250px] grayscale border-1 border border-slate-300 dark:border-zinc-700 rounded-xl"
                     alt="eliaschen"
                 />&emsp;
             </div>
