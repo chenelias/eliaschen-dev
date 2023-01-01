@@ -11,6 +11,7 @@ import PostsSection from '../components/Index/PostsSection.astro'
 import WorksSecton from '../components/Index/WorksSection.astro'
 import ContentXL from '../components/ContentXL.astro'
 import { AiOutlineArrow } from '../Printicon'
+import AlertOlder from '../components/AlertOlder'
 ---
 
 <!DOCTYPE html>
@@ -20,16 +21,9 @@ import { AiOutlineArrow } from '../Printicon'
     </head>
     <Body>
         <Header title={SITE_TITLE} />
-        <main class="pt-[100px]">
-            <!-- <div class="mt-20 mx-auto text-center mb-20">
-                <h1 class="welcome text-md font-thin ">WELCOME TO ELIASCHEN.DEV</h1>
-                <h1 class="text-3xl font-mplus ishareabout">For</h1>
-                <h1 class="typetitle text-5xl text-center font-mplus font-bold text-orange-400">
-                    <TypeTitle client:visible />
-                </h1>
-            </div> -->
-            <ContentLL>
-            </ContentLL>
+        <main class="pt-[70px]">
+            <AlertOlder/>
+            <ContentLL />
             <ContentXL>
                 <About />
                 <div class="mt-[40px]">
@@ -40,9 +34,7 @@ import { AiOutlineArrow } from '../Printicon'
                                 ><span class=""><AiOutlineArrow /></span>
                             </button>
                         </a>
-                        <h1 class="font-extrabold text-5xl mb-5">
-                            Blog
-                        </h1>
+                        <h1 class="font-extrabold text-5xl mb-5">Blog</h1>
                         <PostsSection />
                     </section>
                     <section class="worksdiv mt-[10px]">
@@ -52,9 +44,7 @@ import { AiOutlineArrow } from '../Printicon'
                                 ><span><AiOutlineArrow /></span>
                             </button>
                         </a>
-                        <h1 class="font-extrabold text-5xl my-10">
-                            Works
-                        </h1>
+                        <h1 class="font-extrabold text-5xl my-10">Works</h1>
                         <WorksSecton />
                     </section>
                 </div>
